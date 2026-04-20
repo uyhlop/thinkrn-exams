@@ -1,0 +1,2617 @@
+{
+  "metadata": {
+    "student": "Ray Kosgei",
+    "focus": "Built around the upcoming Mental Health Nursing Exam 3 and Health Restoration 1 Exam 4, using Ray's calendar plus the Semester 2 workbook topics found in Gmail.",
+    "term_count": 100,
+    "question_count": 120,
+    "sources_summary": [
+      "Google Calendar showed Mental Health Exam on 2026-04-21 and HR 1 Exam on 2026-04-22.",
+      "Semester 2 Homework List workbook showed course topics leading into those exams.",
+      "Gmail update referenced mental health and health restoration term-seed source files."
+    ]
+  },
+  "terms": [
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Positive Symptoms of Schizophrenia",
+      "definition": "Symptoms such as hallucinations, delusions, and disorganized thinking that reflect an excess or distortion of normal functions.",
+      "why_it_matters": "Recognizing positive symptoms helps in early diagnosis and guides treatment with antipsychotic medications.",
+      "id": "term-1"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Negative Symptoms of Schizophrenia",
+      "definition": "Symptoms involving a decrease or loss of normal functions, like flat affect, social withdrawal, and lack of motivation.",
+      "why_it_matters": "Negative symptoms impair daily functioning and are less responsive to medication, requiring comprehensive care approaches.",
+      "id": "term-2"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Psychosis",
+      "definition": "A state where a person loses contact with reality, experiencing hallucinations or delusions.",
+      "why_it_matters": "Early recognition of psychosis can prevent harm and improve recovery outcomes through timely intervention.",
+      "id": "term-3"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Trauma-Informed Care",
+      "definition": "A care approach that acknowledges the impact of trauma and integrates this understanding into treatment and interactions.",
+      "why_it_matters": "Applying trauma-informed care reduces retraumatization and supports healing in vulnerable patients.",
+      "id": "term-4"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Crisis Intervention",
+      "definition": "Immediate, short-term help aimed at assisting individuals in crisis to restore equilibrium and adaptive functioning.",
+      "why_it_matters": "Effective crisis intervention prevents escalation and reduces risk of harm to self or others.",
+      "id": "term-5"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Disaster Mental Health Response",
+      "definition": "Mental health strategies and services provided following natural or human-made disasters to support affected populations.",
+      "why_it_matters": "Timely mental health response can mitigate long-term psychological effects of disasters.",
+      "id": "term-6"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Physical Abuse Signs",
+      "definition": "Indicators like bruises, burns, or fractures that may suggest intentional injury by another person.",
+      "why_it_matters": "Identifying abuse signs allows nurses to protect patients and initiate appropriate interventions.",
+      "id": "term-7"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Aggression vs. Violence",
+      "definition": "Aggression is hostile or attacking behavior; violence is actual physical force intended to hurt or damage.",
+      "why_it_matters": "Differentiating helps in planning de-escalation techniques and ensuring safety.",
+      "id": "term-8"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Borderline Personality Disorder Features",
+      "definition": "Characterized by instability in relationships, self-image, and emotions, with impulsive behavior.",
+      "why_it_matters": "Understanding features aids in empathy and creating effective, consistent care plans.",
+      "id": "term-9"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Substance Use Disorder",
+      "definition": "A pattern of harmful use of substances leading to significant impairment or distress.",
+      "why_it_matters": "Identifying substance use disorder helps in initiating treatment and supporting recovery.",
+      "id": "term-10"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Addiction Brain Changes",
+      "definition": "Neurochemical and structural brain alterations that reinforce compulsive substance use.",
+      "why_it_matters": "Knowing brain changes explains challenges in quitting and highlights need for ongoing support.",
+      "id": "term-11"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Major Depressive Disorder",
+      "definition": "A mood disorder characterized by persistent sadness, loss of interest, and functional impairment.",
+      "why_it_matters": "Recognizing symptoms ensures timely treatment to reduce morbidity and suicide risk.",
+      "id": "term-12"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Manic Episode",
+      "definition": "A distinct period of abnormally elevated or irritable mood and increased activity or energy lasting at least one week.",
+      "why_it_matters": "Identifying mania is critical for diagnosis and preventing harmful impulsive actions.",
+      "id": "term-13"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Suicide Risk Assessment",
+      "definition": "A systematic evaluation of suicidal thoughts, plans, means, and intent.",
+      "why_it_matters": "Accurate assessment helps prioritize safety and initiate appropriate interventions.",
+      "id": "term-14"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Therapeutic Communication Techniques",
+      "definition": "Specific methods like active listening, open-ended questions, and reflection used to build rapport and understanding.",
+      "why_it_matters": "Effective communication enhances trust and patient outcomes.",
+      "id": "term-15"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Informed Consent in Psychiatry",
+      "definition": "Legal and ethical process ensuring patients understand and agree to treatment procedures.",
+      "why_it_matters": "Protects patient autonomy and supports ethical practice.",
+      "id": "term-16"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Confidentiality Exceptions",
+      "definition": "Situations where sharing patient information is legally justified, like threat of harm or abuse.",
+      "why_it_matters": "Nurses must balance confidentiality with safety and legal obligations.",
+      "id": "term-17"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Typical Antipsychotics",
+      "definition": "First-generation medications primarily blocking dopamine receptors to reduce psychotic symptoms.",
+      "why_it_matters": "Knowing side effects like movement disorders informs monitoring and patient education.",
+      "id": "term-18"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Atypical Antipsychotics",
+      "definition": "Second-generation drugs targeting dopamine and serotonin receptors, often with fewer movement side effects.",
+      "why_it_matters": "Selection affects symptom control and side effect profiles.",
+      "id": "term-19"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Hallucination Management",
+      "definition": "Approaches like validation, distraction, and safety monitoring to help patients experiencing hallucinations.",
+      "why_it_matters": "Proper management minimizes distress and prevents harm.",
+      "id": "term-20"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Delusion Types",
+      "definition": "False fixed beliefs categorized as persecutory, grandiose, somatic, or referential.",
+      "why_it_matters": "Identifying delusion types aids in understanding patient fears and planning care.",
+      "id": "term-21"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Post-Traumatic Stress Disorder (PTSD)",
+      "definition": "A disorder following traumatic events, marked by flashbacks, avoidance, and hyperarousal.",
+      "why_it_matters": "Awareness enables timely support to reduce chronic symptoms.",
+      "id": "term-22"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Stages of Grief",
+      "definition": "The emotional phases of denial, anger, bargaining, depression, and acceptance after loss.",
+      "why_it_matters": "Understanding stages guides empathetic patient support.",
+      "id": "term-23"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Code of Ethics for Nurses",
+      "definition": "Principles guiding nurses\u2019 professional conduct, including respect, advocacy, and confidentiality.",
+      "why_it_matters": "Ensures care aligns with moral and professional standards.",
+      "id": "term-24"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Motivational Interviewing",
+      "definition": "A counseling method that encourages patients to find internal motivation for change.",
+      "why_it_matters": "Effective strategy to address ambivalence, especially in substance use disorders.",
+      "id": "term-25"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Cognitive Behavioral Therapy (CBT) Basics",
+      "definition": "A therapy focusing on changing negative thought patterns to improve mood and behavior.",
+      "why_it_matters": "Common, evidence-based treatment for many mental health conditions.",
+      "id": "term-26"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Signs of Alcohol Withdrawal",
+      "definition": "Symptoms like tremors, sweating, agitation, and seizures that occur after stopping alcohol.",
+      "why_it_matters": "Early recognition prevents complications like delirium tremens.",
+      "id": "term-27"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Lithium Toxicity Symptoms",
+      "definition": "Indicators include nausea, tremors, confusion, and seizures from excessive lithium levels.",
+      "why_it_matters": "Prompt detection prevents serious harm in patients treated for mood disorders.",
+      "id": "term-28"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Suicide Warning Signs",
+      "definition": "Behaviors like talking about death, hopelessness, withdrawal, and giving away possessions.",
+      "why_it_matters": "Identifying signs enables early intervention and saves lives.",
+      "id": "term-29"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Assertive Community Treatment (ACT)",
+      "definition": "An intensive, team-based approach providing comprehensive mental health services in the community.",
+      "why_it_matters": "Reduces hospital readmissions and improves patient independence.",
+      "id": "term-30"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Boundary Violations in Therapeutic Relationships",
+      "definition": "Crossing professional limits that compromise patient safety or trust.",
+      "why_it_matters": "Maintaining boundaries protects both patient and nurse.",
+      "id": "term-31"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Cluster B Personality Disorders",
+      "definition": "Includes antisocial, borderline, histrionic, and narcissistic types characterized by dramatic, emotional behaviors.",
+      "why_it_matters": "Understanding helps tailor communication and manage challenging interactions.",
+      "id": "term-32"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Benzodiazepine Use Risks",
+      "definition": "Risks include dependence, sedation, and respiratory depression, especially with long-term use.",
+      "why_it_matters": "Nurses must monitor dosage and educate patients to prevent harm.",
+      "id": "term-33"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Self-Harm vs. Suicidal Behavior",
+      "definition": "Self-harm is intentional injury without intent to die; suicidal behavior involves intent to end life.",
+      "why_it_matters": "Distinguishing guides risk assessment and intervention planning.",
+      "id": "term-34"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Electroconvulsive Therapy (ECT) Indications",
+      "definition": "Used for severe depression, treatment-resistant mood disorders, or catatonia.",
+      "why_it_matters": "Nurses prepare and support patients through this effective treatment option.",
+      "id": "term-35"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Anger Management Strategies",
+      "definition": "Techniques like deep breathing, time-outs, and cognitive restructuring to control anger.",
+      "why_it_matters": "Teaching these reduces conflict and improves patient interactions.",
+      "id": "term-36"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Stigma Impact on Mental Health",
+      "definition": "Negative beliefs about mental illness that discourage treatment-seeking and recovery.",
+      "why_it_matters": "Nurses advocate for stigma reduction to improve access and outcomes.",
+      "id": "term-37"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Nursing Role in Medication Adherence",
+      "definition": "Educating, monitoring, and supporting patients to take medications correctly.",
+      "why_it_matters": "Ensures therapeutic effectiveness and reduces relapse risk.",
+      "id": "term-38"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Dual Diagnosis Challenges",
+      "definition": "Co-occurring mental health and substance use disorders complicate assessment and treatment.",
+      "why_it_matters": "Integrated approaches are essential for effective care.",
+      "id": "term-39"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Reactive Attachment Disorder",
+      "definition": "A disorder marked by difficulty forming emotional bonds due to early neglect or abuse.",
+      "why_it_matters": "Awareness facilitates early intervention to improve attachment and social functioning.",
+      "id": "term-40"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Safety Planning for Suicide Prevention",
+      "definition": "Developing personalized coping strategies and contacts for crisis moments.",
+      "why_it_matters": "A key intervention to reduce suicide attempts and improve patient safety.",
+      "id": "term-41"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Catatonia",
+      "definition": "A syndrome involving motor immobility, stupor, or agitation often seen in severe psychiatric conditions.",
+      "why_it_matters": "Recognition prompts urgent treatment to prevent complications.",
+      "id": "term-42"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Nursing Documentation in Mental Health",
+      "definition": "Accurate, clear recording of assessments, interventions, and patient responses.",
+      "why_it_matters": "Essential for continuity of care, legal protection, and evaluation of treatment efficacy.",
+      "id": "term-43"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Impulse Control Disorders",
+      "definition": "Conditions characterized by failure to resist harmful impulses, like kleptomania or pyromania.",
+      "why_it_matters": "Identifies need for behavioral interventions and safety precautions.",
+      "id": "term-44"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Neuroleptic Malignant Syndrome",
+      "definition": "A rare, life-threatening reaction to antipsychotics with fever, rigidity, and altered consciousness.",
+      "why_it_matters": "Early recognition and treatment can be lifesaving.",
+      "id": "term-45"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Use of Restraints Ethical Considerations",
+      "definition": "Restrictions should be last resort, used safely and with respect for patient dignity.",
+      "why_it_matters": "Protects patient rights and prevents abuse.",
+      "id": "term-46"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Role of Support Groups",
+      "definition": "Peer-led groups providing emotional support and coping strategies.",
+      "why_it_matters": "Enhances social connectedness and recovery motivation.",
+      "id": "term-47"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Cluster A Personality Disorders",
+      "definition": "A group of personality disorders characterized by odd or eccentric behaviors, including paranoid, schizoid, and schizotypal types.",
+      "why_it_matters": "Recognizing these disorders helps tailor communication and intervention strategies to reduce mistrust and social isolation in affected clients.",
+      "id": "term-48"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Disinhibition Syndrome",
+      "definition": "A condition marked by a loss of social restraint leading to impulsive, inappropriate behaviors often seen in brain injury or certain psychiatric conditions.",
+      "why_it_matters": "Understanding disinhibition helps nurses implement safety precautions and develop behavior management plans to protect clients and others.",
+      "id": "term-49"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "deck": "Mental Health Exam 3",
+      "term": "Substance-Induced Mood Disorder",
+      "definition": "Mood disturbances such as depression or mania caused directly by the effects of drug use or withdrawal.",
+      "why_it_matters": "Distinguishing substance-induced mood disorders from primary mood disorders guides accurate diagnosis and appropriate treatment planning.",
+      "id": "term-50"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Autoimmune Disorder",
+      "definition": "A condition where the immune system attacks the body's own tissues, causing inflammation and damage.",
+      "why_it_matters": "Recognizing autoimmune symptoms early helps prevent tissue damage and manage flare-ups effectively.",
+      "id": "term-51"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Transmission Precautions for TB",
+      "definition": "Use airborne precautions including N95 masks and negative pressure rooms to prevent spreading tuberculosis.",
+      "why_it_matters": "Proper precautions protect healthcare workers and other patients from airborne infectious agents.",
+      "id": "term-52"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "CD4 Count in HIV",
+      "definition": "Measurement of helper T cells indicating immune system strength in HIV-positive patients.",
+      "why_it_matters": "Helps determine disease progression and guide antiretroviral therapy effectiveness.",
+      "id": "term-53"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Osteoarthritis",
+      "definition": "Degenerative joint disease characterized by cartilage breakdown and joint pain.",
+      "why_it_matters": "Understanding symptoms aids in early treatment to maintain joint function and reduce pain.",
+      "id": "term-54"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "ARDS (Acute Respiratory Distress Syndrome)",
+      "definition": "Severe lung inflammation causing impaired oxygen exchange and respiratory failure.",
+      "why_it_matters": "Rapid recognition and management are critical to improve survival rates.",
+      "id": "term-55"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Neutropenia",
+      "definition": "Low neutrophil count increasing risk for infection.",
+      "why_it_matters": "Alerts nurses to implement infection precautions and monitor for signs of infection closely.",
+      "id": "term-56"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Palliative Care",
+      "definition": "Care focused on relieving symptoms and improving quality of life for patients with serious illnesses.",
+      "why_it_matters": "Supports holistic patient care and family coping during illness or end-of-life.",
+      "id": "term-57"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Informed Consent in Surgery",
+      "definition": "Voluntary agreement by the patient after understanding surgical risks, benefits, and alternatives.",
+      "why_it_matters": "Ensures patient autonomy and legal protection for healthcare providers.",
+      "id": "term-58"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Hyponatremia",
+      "definition": "Low sodium level in the blood, often causing confusion and seizures.",
+      "why_it_matters": "Prompt correction prevents severe neurological damage.",
+      "id": "term-59"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Neuropathic Pain",
+      "definition": "Pain caused by nerve damage characterized by burning or shooting sensations.",
+      "why_it_matters": "Requires specialized pain management approaches different from other pain types.",
+      "id": "term-60"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Gastroesophageal Reflux Disease (GERD)",
+      "definition": "Backflow of stomach acid causing heartburn and potential esophageal injury.",
+      "why_it_matters": "Lifestyle and medication interventions prevent complications like esophagitis.",
+      "id": "term-61"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Anaphylaxis",
+      "definition": "Severe, rapid allergic reaction causing airway swelling and shock.",
+      "why_it_matters": "Immediate treatment with epinephrine is life-saving.",
+      "id": "term-62"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "MRSA Infection",
+      "definition": "Infection caused by methicillin-resistant Staphylococcus aureus, resistant to many antibiotics.",
+      "why_it_matters": "Requires strict contact precautions and specific antibiotics to control spread.",
+      "id": "term-63"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Stages of HIV Infection",
+      "definition": "Progression from acute infection to clinical latency to AIDS.",
+      "why_it_matters": "Understanding stages helps tailor treatment and monitor patient health effectively.",
+      "id": "term-64"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Rheumatoid Arthritis",
+      "definition": "Chronic autoimmune disease causing symmetrical joint inflammation and deformity.",
+      "why_it_matters": "Early treatment prevents joint damage and preserves mobility.",
+      "id": "term-65"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Pulmonary Embolism",
+      "definition": "Blood clot blocking lung arteries, causing sudden chest pain and difficulty breathing.",
+      "why_it_matters": "Prompt diagnosis and treatment prevent fatal outcomes.",
+      "id": "term-66"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Neutropenic Precautions",
+      "definition": "Special measures to protect immunocompromised patients from infection exposure.",
+      "why_it_matters": "Reduces risk of life-threatening infections in vulnerable patients.",
+      "id": "term-67"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Hospice Care",
+      "definition": "Supportive care for terminally ill patients focusing on comfort rather than cure.",
+      "why_it_matters": "Improves patient and family experience during end-of-life.",
+      "id": "term-68"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Preoperative Checklist",
+      "definition": "A step-by-step list to ensure patient safety before surgery.",
+      "why_it_matters": "Decreases surgical errors and improves patient outcomes.",
+      "id": "term-69"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Metabolic Acidosis",
+      "definition": "Condition where the blood becomes too acidic due to excess acid or loss of bicarbonate.",
+      "why_it_matters": "Identifying underlying cause is essential for correct treatment.",
+      "id": "term-70"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Opioid Tolerance",
+      "definition": "Reduced effect of opioids over time, requiring higher doses for pain relief.",
+      "why_it_matters": "Helps guide pain management strategies and prevent overdose.",
+      "id": "term-71"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Cirrhosis",
+      "definition": "Chronic liver scarring caused by long-term injury or inflammation.",
+      "why_it_matters": "Early recognition prevents complications like liver failure.",
+      "id": "term-72"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Hypersensitivity Reaction",
+      "definition": "Exaggerated immune response to harmless substances like pollen or certain drugs.",
+      "why_it_matters": "Identifying triggers prevents severe allergic reactions.",
+      "id": "term-73"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Sepsis",
+      "definition": "Life-threatening organ dysfunction caused by an overwhelming immune response to infection.",
+      "why_it_matters": "Early intervention improves survival chances significantly.",
+      "id": "term-74"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Antiretroviral Therapy (ART)",
+      "definition": "Medications used to suppress HIV replication and improve immune function.",
+      "why_it_matters": "Adherence prevents viral resistance and prolongs patient life.",
+      "id": "term-75"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Muscular Dystrophy",
+      "definition": "Genetic disorders causing progressive muscle weakness and loss of muscle mass.",
+      "why_it_matters": "Early diagnosis enables better symptom management and mobility support.",
+      "id": "term-76"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Asthma Trigger Management",
+      "definition": "Identifying and avoiding factors like allergens or smoke that worsen asthma symptoms.",
+      "why_it_matters": "Prevents exacerbations and hospitalizations.",
+      "id": "term-77"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Chemotherapy Side Effects",
+      "definition": "Common reactions include nausea, hair loss, and bone marrow suppression.",
+      "why_it_matters": "Anticipating effects improves patient comfort and adherence to treatment.",
+      "id": "term-78"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Spinal Anesthesia",
+      "definition": "Injection of anesthetic into the spinal fluid to block pain from lower body areas.",
+      "why_it_matters": "Commonly used for lower limb surgeries with faster recovery than general anesthesia.",
+      "id": "term-79"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Hyperkalemia",
+      "definition": "Elevated potassium in the blood risking dangerous heart arrhythmias.",
+      "why_it_matters": "Requires emergency management to prevent cardiac arrest.",
+      "id": "term-80"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Chronic Pain",
+      "definition": "Pain lasting longer than 3 months, often without a clear cause.",
+      "why_it_matters": "Needs comprehensive management including medication and psychosocial support.",
+      "id": "term-81"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Peptic Ulcer Disease",
+      "definition": "Open sores on the lining of the stomach or duodenum caused by acid or infection.",
+      "why_it_matters": "Timely treatment prevents bleeding and perforation.",
+      "id": "term-82"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Systemic Lupus Erythematosus (SLE)",
+      "definition": "Chronic autoimmune disease affecting multiple organs with periods of flare and remission.",
+      "why_it_matters": "Regular monitoring controls disease activity and prevents organ damage.",
+      "id": "term-83"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Standard Precautions",
+      "definition": "Basic infection control practices applied to all patient care to reduce transmission of diseases.",
+      "why_it_matters": "Protects both patients and healthcare workers from infection.",
+      "id": "term-84"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Viral Load Testing in HIV",
+      "definition": "Measures the amount of HIV RNA in the blood to assess virus activity.",
+      "why_it_matters": "Helps evaluate treatment effectiveness and adjust therapy.",
+      "id": "term-85"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Bone Fracture Healing Phases",
+      "definition": "Stages include inflammation, bone production, and bone remodeling.",
+      "why_it_matters": "Knowledge guides nursing care including immobilization and rehabilitation.",
+      "id": "term-86"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "COPD Exacerbation",
+      "definition": "Sudden worsening of chronic obstructive pulmonary disease symptoms like breathlessness and coughing.",
+      "why_it_matters": "Urgent treatment improves respiratory function and prevents hospitalization.",
+      "id": "term-87"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Neutropenic Fever",
+      "definition": "Fever in a patient with low neutrophils indicating possible infection.",
+      "why_it_matters": "Requires immediate assessment and antibiotic therapy to prevent sepsis.",
+      "id": "term-88"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Advanced Directives",
+      "definition": "Legal documents stating patient preferences for care if they cannot communicate.",
+      "why_it_matters": "Guides healthcare decisions respecting patient autonomy.",
+      "id": "term-89"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Postoperative Atelectasis",
+      "definition": "Collapse of lung tissue after surgery causing decreased oxygenation.",
+      "why_it_matters": "Incentive spirometry prevents complications and promotes lung expansion.",
+      "id": "term-90"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Hypovolemia",
+      "definition": "Decreased blood volume often from fluid loss causing low blood pressure and tachycardia.",
+      "why_it_matters": "Prompt fluid replacement is critical to maintain organ perfusion.",
+      "id": "term-91"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Gate Control Theory of Pain",
+      "definition": "Theory that non-painful input can close nerve gates to painful input, reducing pain sensation.",
+      "why_it_matters": "Basis for using methods like massage, heat, or cold to manage pain.",
+      "id": "term-92"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Ileostomy Care",
+      "definition": "Management of a surgically created opening from the ileum to the abdomen for waste elimination.",
+      "why_it_matters": "Prevents skin breakdown and infection, promoting patient comfort.",
+      "id": "term-93"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Anaphylactic Shock Management",
+      "definition": "Immediate interventions include epinephrine injection, airway support, and IV fluids.",
+      "why_it_matters": "Rapid treatment reduces mortality risk during severe allergic reactions.",
+      "id": "term-94"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Clostridioides difficile Infection",
+      "definition": "Bacterial infection causing severe diarrhea, often after antibiotic use.",
+      "why_it_matters": "Requires isolation and specific antibiotic treatment to prevent spread.",
+      "id": "term-95"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "CD4 Cell Function",
+      "definition": "T-helper cells coordinate immune response by signaling other cells to fight pathogens.",
+      "why_it_matters": "HIV targets CD4 cells leading to immune suppression.",
+      "id": "term-96"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Muscle Atrophy",
+      "definition": "Reduction in muscle size and strength due to disuse or disease.",
+      "why_it_matters": "Early activity and therapy prevent permanent weakness.",
+      "id": "term-97"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Status Asthmaticus",
+      "definition": "Severe, persistent asthma attack unresponsive to initial treatment.",
+      "why_it_matters": "Emergency care is essential to prevent respiratory failure.",
+      "id": "term-98"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Cancer Staging",
+      "definition": "System that describes the size and spread of cancer in the body.",
+      "why_it_matters": "Staging guides treatment decisions and prognosis estimation.",
+      "id": "term-99"
+    },
+    {
+      "course": "Health Restoration 1",
+      "deck": "Health Restoration 1 Exam 4",
+      "term": "Surgical Site Infection Prevention",
+      "definition": "Methods include proper skin prep, sterile technique, and postoperative wound care.",
+      "why_it_matters": "Decreases patient morbidity and hospital stay length.",
+      "id": "term-100"
+    }
+  ],
+  "questions": [
+    {
+      "course": "Mental Health Nursing",
+      "section": "Schizophrenia Assessment",
+      "stem": "A client with schizophrenia reports auditory hallucinations commanding harmful acts. What is the nurse's priority action?",
+      "options": [
+        "Ensure client safety and stay close",
+        "Reassure client voices are not real",
+        "Administer prescribed haloperidol immediately",
+        "Ask client to describe the voices' messages"
+      ],
+      "answer_index": 0,
+      "rationale": "Ensuring client safety is critical when command hallucinations involve harmful acts. Staying with the client allows prompt intervention. Reassuring alone is insufficient. Medication administration is important but secondary to immediate safety. Asking details may increase distress.",
+      "cognitive_level": "prioritization",
+      "id": "q-1"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Psychosis Therapeutic Communication",
+      "stem": "A client experiencing psychosis states, \"The TV is sending me secret messages.\" What response by the nurse is most therapeutic?",
+      "options": [
+        "\"I don't see anything unusual about the TV.\"",
+        "\"That must be very frightening for you.\"",
+        "\"Try not to think about it; it's not real.\"",
+        "\"Tell me more about the messages you're receiving.\""
+      ],
+      "answer_index": 1,
+      "rationale": "Acknowledging the client's feelings builds trust and therapeutic rapport. Simply denying the experience may cause defensiveness. Telling the client not to think about it invalidates feelings. Asking for details may reinforce delusions at this stage.",
+      "cognitive_level": "application",
+      "id": "q-2"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Trauma-Informed Care",
+      "stem": "When caring for a client with a history of childhood abuse, what principle best guides nursing care?",
+      "options": [
+        "Encourage detailed disclosure of trauma.",
+        "Maintain strict control over client's choices.",
+        "Promote client empowerment and safety.",
+        "Avoid discussing past abuse to prevent distress."
+      ],
+      "answer_index": 2,
+      "rationale": "Promoting empowerment and safety respects autonomy and reduces retraumatization. Forcing disclosure can be harmful. Controlling client choices undermines trust. Avoiding discussions may hinder healing but should be approached sensitively.",
+      "cognitive_level": "recall",
+      "id": "q-3"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Crisis Intervention",
+      "stem": "A client is in crisis after a sudden job loss. Which nursing action best aids initial coping?",
+      "options": [
+        "Provide active listening and validate feelings.",
+        "Suggest focusing on problem-solving immediately.",
+        "Encourage avoidance of stressful thoughts.",
+        "Refer to long-term psychotherapy."
+      ],
+      "answer_index": 0,
+      "rationale": "Active listening and validation help the client feel understood and stabilize emotions during a crisis. Jumping to problem-solving may be premature. Avoidance can worsen stress. Long-term therapy is helpful but not the immediate priority.",
+      "cognitive_level": "application",
+      "id": "q-4"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Disaster Response Safety",
+      "stem": "In a disaster shelter, a client shows escalating agitation and is yelling. What should the nurse do first?",
+      "options": [
+        "Isolate the client to reduce stimuli.",
+        "Speak calmly and offer space for de-escalation.",
+        "Administer PRN antipsychotic immediately.",
+        "Notify security to remove the client."
+      ],
+      "answer_index": 1,
+      "rationale": "Calm communication and allowing personal space help de-escalate agitation. Isolating may increase anxiety. Medication and security involvement may be necessary later but are not first steps.",
+      "cognitive_level": "prioritization",
+      "id": "q-5"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Abuse Assessment",
+      "stem": "During assessment, a client hesitates when asked about home safety. What is the best nursing action?",
+      "options": [
+        "Press for detailed explanation.",
+        "Document the client's hesitation precisely.",
+        "Suggest family counseling immediately.",
+        "Ignore if no physical signs are present."
+      ],
+      "answer_index": 1,
+      "rationale": "Documenting hesitation carefully preserves client's voice and guides further assessment. Pressing may reduce trust. Immediate counseling referral is premature without more info. Ignoring may miss ongoing abuse.",
+      "cognitive_level": "analysis",
+      "id": "q-6"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Aggression Management",
+      "stem": "A client starts pacing rapidly and clenching fists after a nurse refuses a request. Which nursing response is best?",
+      "options": [
+        "Firmly enforce rules without explanation.",
+        "Offer choices to reduce frustration.",
+        "Ignore behavior to avoid reinforcement.",
+        "Increase stimulation to distract client."
+      ],
+      "answer_index": 1,
+      "rationale": "Offering choices gives the client a sense of control, possibly reducing aggression. Firm enforcement without explanation may escalate anger. Ignoring and increasing stimulation can worsen agitation.",
+      "cognitive_level": "application",
+      "id": "q-7"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Violence Risk Assessment",
+      "stem": "Which client statement indicates highest risk for violence?",
+      "options": [
+        "\"I feel like breaking things when upset.\"",
+        "\"I get angry but don't act on it.\"",
+        "\"I find talking helps me calm down.\"",
+        "\"I avoid conflicts whenever possible.\""
+      ],
+      "answer_index": 0,
+      "rationale": "Expressing intent to break things suggests potential for violent outburst. Anger without action and coping strategies show less risk. Avoidance reduces violence likelihood.",
+      "cognitive_level": "analysis",
+      "id": "q-8"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Medication Safety in Psychosis",
+      "stem": "A client on clozapine reports sudden fever and sore throat. What is the nurse's immediate response?",
+      "options": [
+        "Hold the medication and notify provider.",
+        "Increase hydration and monitor temperature.",
+        "Reassure that this is a common side effect.",
+        "Schedule routine blood draw next week."
+      ],
+      "answer_index": 0,
+      "rationale": "Sudden fever with sore throat may signal agranulocytosis, a serious clozapine side effect, requiring immediate action. Increasing hydration and delaying evaluation could be dangerous. Reassurance is inappropriate. A prompt blood count is urgent, not routine next week.",
+      "cognitive_level": "prioritization",
+      "id": "q-9"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Safety Precautions in Psychosis",
+      "stem": "Which environmental modification best reduces risk for an agitated psychotic client?",
+      "options": [
+        "Providing a low-stimulation, quiet room.",
+        "Allowing access to sharp objects for comfort.",
+        "Leaving the door unlocked for freedom.",
+        "Encouraging loud group activities."
+      ],
+      "answer_index": 0,
+      "rationale": "A quiet environment decreases agitation risk. Sharp objects increase injury potential. Unlocked doors without supervision increase elopement risk. Loud groups may escalate agitation.",
+      "cognitive_level": "application",
+      "id": "q-10"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Trauma Response",
+      "stem": "A client recalls a traumatic event and begins to cry silently. What is the most therapeutic nursing action?",
+      "options": [
+        "Sit with the client and offer tissues.",
+        "Change the subject to avoid distress.",
+        "Tell client to stop crying and stay focused.",
+        "Suggest distraction by engaging in activities."
+      ],
+      "answer_index": 0,
+      "rationale": "Sitting calmly and offering support validates feelings and provides emotional safety. Changing subject or telling to stop crying invalidates emotions. Distraction may be used later but initial support is preferred.",
+      "cognitive_level": "application",
+      "id": "q-11"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Crisis Priority",
+      "stem": "During an acute psychotic episode, a client attempts to climb out of a second-story window. What is the nurse's top priority?",
+      "options": [
+        "Call for immediate assistance and remove hazards.",
+        "Explain consequences of dangerous actions.",
+        "Offer medication to calm the client.",
+        "Reassure that staff is there to help."
+      ],
+      "answer_index": 0,
+      "rationale": "Physical safety is paramount, so immediate assistance and hazard removal must precede explanations or reassurance. Medication and verbal approaches follow ensuring safety.",
+      "cognitive_level": "prioritization",
+      "id": "q-12"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Psychosis Patient Teaching",
+      "stem": "Which instruction is essential for a client starting risperidone therapy?",
+      "options": [
+        "Avoid driving until you know how medication affects you.",
+        "Stop medication if you feel drowsy.",
+        "Skip doses if symptoms improve.",
+        "Limit fluid intake to prevent swelling."
+      ],
+      "answer_index": 0,
+      "rationale": "Risperidone may cause dizziness or sedation; clients should avoid driving until response is known. Stopping medication abruptly may cause relapse. Drowsiness is common but does not justify stopping. Fluid restriction is unrelated.",
+      "cognitive_level": "recall",
+      "id": "q-13"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "De-escalation Techniques",
+      "stem": "During a verbal confrontation, which nurse behavior is most effective to de-escalate the client?",
+      "options": [
+        "Maintaining an open posture and speaking softly.",
+        "Standing very close and using direct eye contact.",
+        "Raising voice to assert authority.",
+        "Ignoring client statements to avoid conflict."
+      ],
+      "answer_index": 0,
+      "rationale": "Open body language and soft voice reduce client defensiveness. Close proximity and intense eye contact can escalate tension. Raising voice increases aggression. Ignoring does not address client needs.",
+      "cognitive_level": "application",
+      "id": "q-14"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Abuse Reporting",
+      "stem": "A nurse suspects elder abuse due to unexplained bruises. What is the nurse's best next step?",
+      "options": [
+        "Report concerns to appropriate authorities.",
+        "Confront the caregiver immediately.",
+        "Discuss suspicions with the client only.",
+        "Document findings without action."
+      ],
+      "answer_index": 0,
+      "rationale": "Mandatory reporting of suspected abuse is a legal and ethical duty. Immediate confrontation risks client safety. Discussion is important but reporting is priority. Documentation alone is insufficient without reporting.",
+      "cognitive_level": "prioritization",
+      "id": "q-15"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Aggression Prevention",
+      "stem": "Which environmental factor best helps prevent aggressive outbursts in an inpatient psychiatric unit?",
+      "options": [
+        "Providing structured daily activities.",
+        "Limiting access to natural light.",
+        "Allowing unrestricted visitation hours.",
+        "Using loud, fast-paced music."
+      ],
+      "answer_index": 0,
+      "rationale": "Structured activities promote routine and reduce boredom-related aggression. Limiting natural light can worsen mood. Unrestricted visitation and loud music may increase agitation.",
+      "cognitive_level": "application",
+      "id": "q-16"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Violence Immediate Action",
+      "stem": "If a client becomes physically aggressive, what should the nurse do first?",
+      "options": [
+        "Use verbal commands to calm the client.",
+        "Remove other clients from the area.",
+        "Physically restrain the client immediately.",
+        "Ignore the behavior to avoid reinforcement."
+      ],
+      "answer_index": 1,
+      "rationale": "Protecting other clients from harm is the initial priority. Verbal commands and restraints follow safety measures. Ignoring aggression can escalate violence.",
+      "cognitive_level": "prioritization",
+      "id": "q-17"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Assessment Findings",
+      "stem": "A client with schizophrenia demonstrates disorganized speech and flat affect. Which additional symptom should the nurse expect?",
+      "options": [
+        "Auditory hallucinations",
+        "Elevated mood",
+        "Manic episodes",
+        "Enhanced memory"
+      ],
+      "answer_index": 0,
+      "rationale": "Auditory hallucinations are a common positive symptom of schizophrenia, whereas elevated mood and manic episodes are related to mood disorders, and enhanced memory is not typical of schizophrenia.",
+      "cognitive_level": "recall",
+      "id": "q-18"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Therapeutic Communication",
+      "stem": "During an initial interview, the client expresses mistrust and refuses to answer questions. What is the most therapeutic nurse response?",
+      "options": [
+        "\"I understand this is hard; let's take the time you need.\"",
+        "\"You must answer these questions to get help.\"",
+        "\"Why don\u2019t you trust me?\"",
+        "\"Everyone here is trying to help you.\""
+      ],
+      "answer_index": 0,
+      "rationale": "Acknowledging the client's feelings and offering time promotes trust and safety. Forcing answers or questioning mistrust may increase resistance.",
+      "cognitive_level": "application",
+      "id": "q-19"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "De-Escalation",
+      "stem": "A client is becoming increasingly agitated and pacing the room. What is the priority nursing action to prevent escalation?",
+      "options": [
+        "Speak calmly and offer a quiet space to sit.",
+        "Administer PRN antipsychotic medication immediately.",
+        "Call security to prepare for restraint use.",
+        "Ignore the pacing to avoid confrontation."
+      ],
+      "answer_index": 0,
+      "rationale": "Calm communication and offering a quiet space can help reduce agitation early. Immediate medication or restraint use is premature unless behavior escalates; ignoring may worsen agitation.",
+      "cognitive_level": "prioritization",
+      "id": "q-20"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Safety",
+      "stem": "A client with a history of violent outbursts is admitted. Which environmental adjustment best enhances safety?",
+      "options": [
+        "Keep the door open without locks.",
+        "Remove all sharp objects and restrict room items.",
+        "Encourage group activities to build social skills.",
+        "Place the client in a brightly lit common room."
+      ],
+      "answer_index": 1,
+      "rationale": "Removing sharp objects reduces risk of self-harm or harm to others. Open doors and bright common rooms may increase stimuli and agitation; group activities may be unsafe initially.",
+      "cognitive_level": "analysis",
+      "id": "q-21"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Immediate Nursing Actions",
+      "stem": "A client with psychosis threatens staff with a broken object. What should the nurse do first?",
+      "options": [
+        "Move to a safe distance and call for help.",
+        "Attempt to reason with the client to disarm them.",
+        "Physically restrain the client immediately.",
+        "Ignore the threat to avoid escalation."
+      ],
+      "answer_index": 0,
+      "rationale": "Safety of staff and client is priority; maintaining distance and calling help first is safest. Reasoning or restraint should only occur when safe to do so; ignoring a threat is unsafe.",
+      "cognitive_level": "prioritization",
+      "id": "q-22"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Trauma and Crisis",
+      "stem": "A client who survived a traumatic event is hypervigilant and unable to sleep. What is the nurse\u2019s priority intervention?",
+      "options": [
+        "Encourage use of relaxation techniques before bedtime.",
+        "Suggest avoiding all social interactions for now.",
+        "Advise the client to ignore distressing thoughts.",
+        "Recommend increasing physical activity late at night."
+      ],
+      "answer_index": 0,
+      "rationale": "Relaxation techniques help reduce anxiety and improve sleep without causing further distress. Isolation and ignoring thoughts may worsen symptoms; late-night activity disrupts sleep further.",
+      "cognitive_level": "application",
+      "id": "q-23"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Abuse Recognition",
+      "stem": "While assessing a nonverbal client, the nurse notices unexplained bruises and the client flinches when touched. What is the nurse\u2019s best action?",
+      "options": [
+        "Report the findings to the appropriate authority.",
+        "Assume the client is clumsy and continue care.",
+        "Ask family members about possible injury causes.",
+        "Ignore the findings to avoid distressing the client."
+      ],
+      "answer_index": 0,
+      "rationale": "Unexplained injuries with signs of fear suggest abuse; reporting ensures client safety and legal compliance. Assuming injuries or ignoring risks client harm; family questioning may create safety issues.",
+      "cognitive_level": "analysis",
+      "id": "q-24"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Aggression and Violence",
+      "stem": "A client shouts threats and clenches fists during group therapy. What is the nurse\u2019s most appropriate response?",
+      "options": [
+        "Suggest the client take a break from the group.",
+        "Confront the client about their aggressive behavior.",
+        "Ignore the shouting to avoid reinforcement.",
+        "Ask the group to leave immediately."
+      ],
+      "answer_index": 0,
+      "rationale": "Removing the client from the group reduces triggers and prevents escalation. Confrontation may increase aggression; ignoring threatens safety; asking group to leave is less practical than removing the agitated client.",
+      "cognitive_level": "prioritization",
+      "id": "q-25"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Medication Safety",
+      "stem": "A client on antipsychotic therapy reports muscle stiffness and drooling. What is the nurse\u2019s best next action?",
+      "options": [
+        "Notify the provider about possible extrapyramidal symptoms.",
+        "Advise the client that symptoms will resolve soon.",
+        "Increase fluid intake to relieve symptoms.",
+        "Document the symptoms and continue monitoring."
+      ],
+      "answer_index": 0,
+      "rationale": "Muscle stiffness and drooling suggest extrapyramidal side effects needing provider evaluation. Dismissing symptoms or just documenting delays treatment; increased fluids do not address these side effects.",
+      "cognitive_level": "application",
+      "id": "q-26"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Disaster Mental Health",
+      "stem": "After a natural disaster, clients show signs of acute stress disorder. Which nursing action best supports coping?",
+      "options": [
+        "Facilitate expression of feelings and provide reassurance.",
+        "Encourage clients to suppress emotions to focus on recovery.",
+        "Limit client interactions to prevent retraumatization.",
+        "Advise clients to immediately return to normal routines."
+      ],
+      "answer_index": 0,
+      "rationale": "Expressing feelings with reassurance helps process trauma and fosters coping. Suppressing emotions or limiting interactions may delay recovery; abruptly returning to routines may overwhelm clients.",
+      "cognitive_level": "application",
+      "id": "q-27"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Immediate Nursing Actions",
+      "stem": "During an emergency psychiatric admission, a client is confused, fearful, and refusing to communicate. What should the nurse do first?",
+      "options": [
+        "Provide a calm, private environment and simple explanations.",
+        "Leave the client alone until more verbal.",
+        "Ask the client detailed questions about their situation.",
+        "Insist on immediate cooperation for assessment."
+      ],
+      "answer_index": 0,
+      "rationale": "A calm setting and simple communication reduce fear and encourage engagement. Leaving alone may increase isolation; detailed questioning or insisting on cooperation may worsen confusion and fear.",
+      "cognitive_level": "prioritization",
+      "id": "q-28"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Personality Disorders",
+      "stem": "Which is the best nursing approach when caring for a client with borderline personality disorder exhibiting intense fear of abandonment?",
+      "options": [
+        "Maintain consistent boundaries and clear communication",
+        "Ignore emotional outbursts to avoid reinforcement",
+        "Allow behaviors to express feelings freely",
+        "Minimize interactions to prevent dependency"
+      ],
+      "answer_index": 0,
+      "rationale": "Consistent boundaries and clear communication provide structure that helps clients with borderline personality disorder manage fears and instability. Ignoring outbursts or minimizing interactions can increase feelings of abandonment and destabilize the client. Allowing all behaviors without limits may reinforce maladaptive patterns.",
+      "cognitive_level": "application",
+      "id": "q-29"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Substance-Related Disorders",
+      "stem": "What teaching should the nurse provide to a client prescribed disulfiram for alcohol use disorder?",
+      "options": [
+        "Avoid all alcohol, including in sauces or mouthwash",
+        "Take medication only when drinking is planned",
+        "Disulfiram reduces alcohol cravings immediately",
+        "Can consume small amounts of alcohol safely"
+      ],
+      "answer_index": 0,
+      "rationale": "Clients taking disulfiram must avoid all sources of alcohol because ingestion causes severe reactions. The medication does not reduce cravings and needs to be taken consistently, not intermittently. Suggesting small amounts of alcohol is unsafe and incorrect.",
+      "cognitive_level": "application",
+      "id": "q-30"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Addiction Disorders",
+      "stem": "Which intervention best helps prevent relapse in a client recovering from opioid addiction?",
+      "options": [
+        "Developing a strong social support network",
+        "Limiting engagement in therapy to reduce stress",
+        "Allowing controlled opioid use to avoid withdrawal",
+        "Avoiding all situations that cause any craving"
+      ],
+      "answer_index": 0,
+      "rationale": "Building social support enhances coping and reduces relapse risk. Limiting therapy ignores essential recovery work. Controlled opioid use contradicts recovery goals, and total avoidance of any craving-triggering situations may be unrealistic and increase anxiety.",
+      "cognitive_level": "application",
+      "id": "q-31"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Mood Disorders",
+      "stem": "A client starting lithium therapy asks about early signs of toxicity. What should the nurse include?",
+      "options": [
+        "Vomiting, diarrhea, tremors, and blurred vision",
+        "Increased thirst and frequent urination",
+        "Weight gain and hair loss",
+        "Dry mouth and constipation"
+      ],
+      "answer_index": 0,
+      "rationale": "Early lithium toxicity often presents with gastrointestinal upset, tremors, and vision changes, signaling immediate need for medical attention. Increased thirst and urination are side effects but less urgent. Weight gain or hair loss occur less frequently. Dry mouth and constipation are not key toxicity signs.",
+      "cognitive_level": "recall",
+      "id": "q-32"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Suicide Risk",
+      "stem": "What is the highest priority action for a client expressing suicidal thoughts with a detailed plan?",
+      "options": [
+        "Ensure continuous observation and restrict access to lethal means",
+        "Provide supportive counseling and schedule follow-up",
+        "Encourage verbalizing feelings in group therapy",
+        "Assess medication adherence"
+      ],
+      "answer_index": 0,
+      "rationale": "Immediate safety by ensuring continuous observation and removing lethal means is critical when a client has a specific suicide plan. Counseling and therapy are secondary to safety. Medication adherence is important but less urgent than preventing self-harm.",
+      "cognitive_level": "prioritization",
+      "id": "q-33"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Psychopharmacology",
+      "stem": "A client on SSRIs reports new onset of confusion, agitation, and fluctuating vitals. What is the nurse\u2019s priority?",
+      "options": [
+        "Notify provider immediately for possible serotonin syndrome",
+        "Encourage fluids and rest at home",
+        "Schedule routine blood tests",
+        "Withhold medication until next visit"
+      ],
+      "answer_index": 0,
+      "rationale": "Confusion, agitation, and vital sign changes can indicate serotonin syndrome, a medical emergency requiring immediate provider notification. Encouraging fluids or delaying care is unsafe. Routine labs or withholding meds without guidance are inappropriate first steps.",
+      "cognitive_level": "analysis",
+      "id": "q-34"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Mood Disorders",
+      "stem": "Which symptom best indicates improvement in a client with major depressive disorder after starting therapy?",
+      "options": [
+        "Reports increased energy and interest in activities",
+        "Sleeps more and isolates socially",
+        "States feeling numb and empty",
+        "Reports continued hopelessness"
+      ],
+      "answer_index": 0,
+      "rationale": "Increased energy and renewed interest are positive signs of recovery. Increased sleep and isolation, numbness, or hopelessness indicate persistence of depressive symptoms and less improvement.",
+      "cognitive_level": "analysis",
+      "id": "q-35"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Substance-Related Disorders",
+      "stem": "What clinical sign most suggests opioid overdose requiring emergency intervention?",
+      "options": [
+        "Slow, shallow respirations and pinpoint pupils",
+        "Dilated pupils and rapid breathing",
+        "Elevated heart rate and agitation",
+        "Severe sweating and tremors"
+      ],
+      "answer_index": 0,
+      "rationale": "Opioid overdose typically causes respiratory depression and miosis (pinpoint pupils), both requiring urgent intervention. Dilated pupils and rapid breathing suggest stimulant use. Elevated heart rate/ agitation and sweating/ tremors are withdrawal or stimulant symptoms.",
+      "cognitive_level": "application",
+      "id": "q-36"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Addiction Disorders",
+      "stem": "When teaching relapse prevention to a client with alcohol use disorder, which strategy is most effective?",
+      "options": [
+        "Identify and plan for high-risk situations",
+        "Completely avoid all social gatherings",
+        "Rely solely on medication adherence",
+        "Allow moderate alcohol use in controlled settings"
+      ],
+      "answer_index": 0,
+      "rationale": "Recognizing triggers and planning coping strategies is crucial to prevent relapse. Avoiding all social events may not be realistic or necessary. Medication helps but is not sufficient alone. Moderate alcohol use is unsafe in recovery.",
+      "cognitive_level": "application",
+      "id": "q-37"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Personality Disorders",
+      "stem": "A client with antisocial personality disorder manipulates peers during group therapy. What is the nurse\u2019s best response?",
+      "options": [
+        "Set clear limits on acceptable behavior",
+        "Confront the client aggressively",
+        "Ignore manipulative behaviors",
+        "Allow client to lead the discussion"
+      ],
+      "answer_index": 0,
+      "rationale": "Setting clear limits maintains structure and reduces manipulation. Aggressive confrontation escalates conflict. Ignoring behaviors allows continuation, and letting the client lead can reinforce manipulation.",
+      "cognitive_level": "application",
+      "id": "q-38"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Psychopharmacology",
+      "stem": "Which laboratory test is essential before starting clozapine therapy?",
+      "options": [
+        "Complete blood count to monitor for neutropenia",
+        "Liver function tests to assess toxicity",
+        "Renal function to adjust dosing",
+        "Blood glucose for diabetes risk"
+      ],
+      "answer_index": 0,
+      "rationale": "Clozapine carries risk of agranulocytosis; baseline and regular CBC monitoring is required. Liver and renal function may be important, but CBC is critical. Blood glucose monitoring is important later for metabolic risks but less urgent initially.",
+      "cognitive_level": "recall",
+      "id": "q-39"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Suicide Risk",
+      "stem": "When caring for a patient recently discharged after a suicide attempt, what is the highest priority nursing action?",
+      "options": [
+        "Develop a detailed safety plan with the patient",
+        "Encourage return to normal routines quickly",
+        "Reduce all social interactions to decrease stress",
+        "Increase medication dosage immediately"
+      ],
+      "answer_index": 0,
+      "rationale": "Creating a safety plan collaboratively supports ongoing risk management. Rapid return to routines or social isolation can be harmful. Medication adjustments should be provider-directed, not nurse-initiated without orders.",
+      "cognitive_level": "prioritization",
+      "id": "q-40"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Mood Disorders",
+      "stem": "A client on MAO inhibitors must avoid which food to prevent hypertensive crisis?",
+      "options": [
+        "Aged cheeses and cured meats",
+        "Fresh fruits and vegetables",
+        "Whole grains and legumes",
+        "Low-fat dairy products"
+      ],
+      "answer_index": 0,
+      "rationale": "Aged cheeses and cured meats contain tyramine, which can cause dangerous hypertensive episodes when combined with MAO inhibitors. Fresh produce, grains, and low-fat dairy are generally safe.",
+      "cognitive_level": "recall",
+      "id": "q-41"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Addiction Disorders",
+      "stem": "What behavior indicates early alcohol withdrawal requiring nursing intervention?",
+      "options": [
+        "Anxiety, tremors, and diaphoresis",
+        "Lethargy and confusion",
+        "Bradycardia and low blood pressure",
+        "Severe hallucinations and seizures"
+      ],
+      "answer_index": 0,
+      "rationale": "Anxiety, tremors, and sweating commonly appear early in alcohol withdrawal and need assessment and treatment. Lethargy and confusion or severe hallucinations occur in more severe stages. Bradycardia is uncommon in withdrawal states.",
+      "cognitive_level": "application",
+      "id": "q-42"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Psychopharmacology",
+      "stem": "Which side effect of lithium requires immediate nursing notification?",
+      "options": [
+        "Severe diarrhea and vomiting",
+        "Mild hand tremors",
+        "Increased urination",
+        "Weight gain"
+      ],
+      "answer_index": 0,
+      "rationale": "Severe gastrointestinal symptoms can indicate lithium toxicity needing urgent evaluation. Mild tremors and polyuria are common side effects; weight gain is gradual and less urgent.",
+      "cognitive_level": "prioritization",
+      "id": "q-43"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Substance-Related Disorders",
+      "stem": "How should the nurse respond when a client reports cravings during early recovery from cocaine addiction?",
+      "options": [
+        "Encourage use of healthy distractions and coping skills",
+        "Advise occasional use to control cravings",
+        "Ignore as a normal phase needing no intervention",
+        "Recommend increasing cocaine doses to reduce withdrawal"
+      ],
+      "answer_index": 0,
+      "rationale": "Teaching coping mechanisms and distractions supports relapse prevention. Occasional or increased use is harmful. Ignoring cravings misses an opportunity for intervention.",
+      "cognitive_level": "application",
+      "id": "q-44"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Personality Disorders",
+      "stem": "What communication technique is most effective when interacting with a client with narcissistic personality disorder?",
+      "options": [
+        "Use a calm, respectful tone and avoid criticism",
+        "Challenge grandiose statements to promote reality testing",
+        "Ignore client attempts to receive praise",
+        "Confront entitlement behaviors directly"
+      ],
+      "answer_index": 0,
+      "rationale": "Calm, respectful communication reduces defensiveness and facilitates rapport. Directly challenging or confronting behaviors can cause resistance. Ignoring the client\u2019s need for praise may increase frustration.",
+      "cognitive_level": "application",
+      "id": "q-45"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Substance-Related Disorders",
+      "stem": "Which vital sign change most urgently signals alcohol withdrawal delirium requiring immediate intervention?",
+      "options": [
+        "Increased heart rate",
+        "Mild tremors",
+        "Normal blood pressure",
+        "Dry mouth"
+      ],
+      "answer_index": 0,
+      "rationale": "Tachycardia indicates autonomic hyperactivity seen in severe alcohol withdrawal and delirium tremens, requiring urgent care. Mild tremors are early signs but less urgent. Normal blood pressure and dry mouth are less critical in this context.",
+      "cognitive_level": "prioritization",
+      "id": "q-46"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Addiction Disorders",
+      "stem": "What is the best relapse prevention strategy for a client recovering from opioid addiction?",
+      "options": [
+        "Regular attendance at support groups",
+        "Avoid discussing cravings openly",
+        "Using opioids sparingly if needed",
+        "Avoid all social environments"
+      ],
+      "answer_index": 0,
+      "rationale": "Consistent attendance at support groups provides social support and accountability, key in relapse prevention. Avoiding discussion of cravings limits therapeutic communication. Using opioids at all risks relapse. Total social avoidance may lead to isolation and risk of relapse.",
+      "cognitive_level": "application",
+      "id": "q-47"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Mood Disorders",
+      "stem": "Which observation most suggests a client\u2019s depressive symptoms are improving?",
+      "options": [
+        "Improved eye contact and increased energy",
+        "Increased social withdrawal",
+        "Poor appetite and insomnia",
+        "Frequent tearfulness"
+      ],
+      "answer_index": 0,
+      "rationale": "Improved eye contact and energy indicate recovery from depression. Social withdrawal, poor appetite, insomnia, and tearfulness are typical depressive symptoms, suggesting ongoing illness rather than improvement.",
+      "cognitive_level": "analysis",
+      "id": "q-48"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Suicide Risk",
+      "stem": "What is the nurse\u2019s highest priority for a client who expresses suicidal intent with a specific plan?",
+      "options": [
+        "Implement continuous observation",
+        "Provide supportive counseling",
+        "Restrict visitors for privacy",
+        "Encourage journaling of feelings"
+      ],
+      "answer_index": 0,
+      "rationale": "Continuous observation prevents self-harm in high suicide risk clients. Supportive counseling is important but not sufficient alone. Visitor restrictions and journaling do not immediately ensure safety.",
+      "cognitive_level": "prioritization",
+      "id": "q-49"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Substance-Related Disorders",
+      "stem": "Which symptom reported by a client on methadone maintenance therapy requires immediate nursing assessment?",
+      "options": [
+        "Respiratory depression",
+        "Dry mouth",
+        "Mild nausea",
+        "Constipation"
+      ],
+      "answer_index": 0,
+      "rationale": "Respiratory depression is life-threatening and demands immediate intervention. Dry mouth, mild nausea, and constipation are common side effects but not emergencies.",
+      "cognitive_level": "prioritization",
+      "id": "q-50"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Psychopharmacology",
+      "stem": "A client on haloperidol reports a stiff neck and slow movements. What is the nurse\u2019s best next action?",
+      "options": [
+        "Report symptoms immediately; monitor for extrapyramidal side effects",
+        "Advise the client to drink more water",
+        "Discontinue the medication without notifying the provider",
+        "Document and reassess in 24 hours"
+      ],
+      "answer_index": 0,
+      "rationale": "Stiff neck and slow movements suggest extrapyramidal symptoms from haloperidol; prompt reporting is critical to prevent worsening. Increasing fluids may help some side effects but is not priority here. Discontinuation must be done by prescriber; delaying action risks complications. Waiting 24 hours delays necessary treatment.",
+      "cognitive_level": "prioritization",
+      "id": "q-51"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Personality Disorders",
+      "stem": "A client with borderline personality disorder expresses intense fear of abandonment during a visit. What is the nurse's best therapeutic response?",
+      "options": [
+        "Reassure the client you will not leave them and stay longer",
+        "Encourage the client to verbalize feelings and provide consistent support",
+        "Suggest the client avoid relationships to prevent hurt",
+        "Tell the client to focus on changing their behavior immediately"
+      ],
+      "answer_index": 1,
+      "rationale": "Encouraging verbalization and offering consistent support helps clients with borderline personality disorder build trust and manage abandonment fears. Reassurance without boundaries can foster dependency; discouraging relationships increases isolation; urging immediate behavior change is unrealistic at the moment.",
+      "cognitive_level": "application",
+      "id": "q-52"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Substance-Related Disorders",
+      "stem": "Which teaching is most important for a client newly prescribed naltrexone for opioid addiction?",
+      "options": [
+        "Avoid alcohol to prevent liver damage",
+        "Expect sedation during the first days",
+        "Report any mood changes or suicidal thoughts",
+        "Do not use opioid pain medications while taking this drug"
+      ],
+      "answer_index": 3,
+      "rationale": "Naltrexone blocks opioid effects; using opioid pain meds can cause severe withdrawal or overdose. Avoiding alcohol and monitoring mood are important too but opioid interaction is critical. Sedation is not a typical effect of naltrexone.",
+      "cognitive_level": "application",
+      "id": "q-53"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Mood Disorders",
+      "stem": "A client starting fluoxetine reports headaches and difficulty sleeping. Which is the nurse's priority teaching point?",
+      "options": [
+        "These symptoms are common transient side effects and often improve",
+        "Increase fluid intake and rest more to minimize symptoms",
+        "Stop medication if symptoms worsen or become intolerable",
+        "Take medication only when depressive symptoms return"
+      ],
+      "answer_index": 0,
+      "rationale": "Headache and insomnia are common early side effects of SSRIs like fluoxetine and usually resolve within weeks. Patients should continue medication and report worsening symptoms; stopping or intermittent dosing can worsen depression. Increasing fluids may help but is not primary teaching.",
+      "cognitive_level": "recall",
+      "id": "q-54"
+    },
+    {
+      "course": "Mental Health Nursing",
+      "section": "Suicide Risk and Prioritization",
+      "stem": "A client admits to planning suicide with access to means. What is the nurse's highest priority action?",
+      "options": [
+        "Remove any means that can be used for self-harm immediately",
+        "Notify the healthcare provider and maintain close observation",
+        "Discuss feelings and explore alternatives to suicide",
+        "Provide information about crisis hotlines"
+      ],
+      "answer_index": 0,
+      "rationale": "Removing access to means directly decreases immediate suicide risk and is the top safety priority. Notifying the provider and observing are important but follow restricting means. Exploring feelings and hotlines support care but do not address urgent safety first.",
+      "cognitive_level": "prioritization",
+      "id": "q-55"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Infection Control",
+      "stem": "Which personal protective equipment (PPE) is essential when caring for a client with active tuberculosis?",
+      "options": [
+        "N95 respirator mask",
+        "Surgical mask",
+        "Gown and gloves only",
+        "Face shield only"
+      ],
+      "answer_index": 0,
+      "rationale": "N95 respirators filter airborne particles, protecting against TB transmission, unlike surgical masks which do not. Gloves and gowns alone do not prevent inhalation, and face shields protect against splashes but not airborne pathogens.",
+      "cognitive_level": "recall",
+      "id": "q-56"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Lab Interpretation",
+      "stem": "A client with HIV has a CD4 count of 150 cells/mm\u00b3. What is the nurse\u2019s priority action?",
+      "options": [
+        "Educate on opportunistic infection prevention",
+        "Administer prophylactic antibiotics as ordered",
+        "Discontinue antiretroviral therapy",
+        "Schedule routine dental cleaning"
+      ],
+      "answer_index": 1,
+      "rationale": "A CD4 count below 200 increases risk for opportunistic infections, requiring prophylactic antibiotics. Education is important but secondary; discontinuing therapy worsens immune decline. Routine dental care is routine but not urgent with this count.",
+      "cognitive_level": "application",
+      "id": "q-57"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Medication and Monitoring",
+      "stem": "A client starting zidovudine therapy should be monitored primarily for which adverse effect?",
+      "options": [
+        "Anemia",
+        "Hypertension",
+        "Renal failure",
+        "Hyperglycemia"
+      ],
+      "answer_index": 0,
+      "rationale": "Zidovudine commonly causes bone marrow suppression leading to anemia. Hypertension, renal failure, and hyperglycemia are not typical side effects of this medication.",
+      "cognitive_level": "recall",
+      "id": "q-58"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Nursing Priorities",
+      "stem": "Which nursing action has highest priority for a client with suspected sepsis from a catheter-associated infection?",
+      "options": [
+        "Remove the catheter immediately",
+        "Start IV antibiotics without delay",
+        "Obtain blood cultures first",
+        "Elevate head of bed to 45 degrees"
+      ],
+      "answer_index": 2,
+      "rationale": "Blood cultures are critical before antibiotics to identify causative organisms. Immediate catheter removal or antibiotics may be necessary but should follow cultures. Elevating the bed is supportive but lower priority.",
+      "cognitive_level": "prioritization",
+      "id": "q-59"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Patient Teaching",
+      "stem": "What instruction should the nurse include when teaching a client prescribed highly active antiretroviral therapy (HAART)?",
+      "options": [
+        "Take medications at the same time daily without missing doses",
+        "Stop medication if feeling well",
+        "Avoid all vaccinations during therapy",
+        "Use antibiotics to prevent HIV progression"
+      ],
+      "answer_index": 0,
+      "rationale": "Consistent adherence to HAART dosing maintains viral suppression. Stopping meds can cause resistance; some vaccines are recommended; antibiotics are not used to prevent HIV progression.",
+      "cognitive_level": "application",
+      "id": "q-60"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Infection Control",
+      "stem": "What is the best nursing action to prevent spread of Clostridioides difficile in a hospital unit?",
+      "options": [
+        "Wash hands with soap and water after patient care",
+        "Use alcohol-based hand sanitizer between clients",
+        "Wear N95 masks for all patients",
+        "Disinfect surfaces with water only"
+      ],
+      "answer_index": 0,
+      "rationale": "Soap and water effectively remove C. difficile spores; alcohol sanitizers do not. N95 masks are unnecessary; surfaces require bleach-based disinfectants, not just water.",
+      "cognitive_level": "recall",
+      "id": "q-61"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Lab Interpretation",
+      "stem": "A client\u2019s HIV viral load decreases after starting treatment. What does this indicate?",
+      "options": [
+        "The virus is responding to therapy",
+        "The client is developing resistance",
+        "The CD4 count is dangerously low",
+        "The infection is worsening"
+      ],
+      "answer_index": 0,
+      "rationale": "A decreasing viral load shows effective suppression by medication. Resistance and worsening disease cause viral load increases. CD4 count is separate from viral load.",
+      "cognitive_level": "analysis",
+      "id": "q-62"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Medication and Monitoring",
+      "stem": "Before administering trimethoprim-sulfamethoxazole to an HIV client, what lab test should the nurse check?",
+      "options": [
+        "Complete blood count (CBC)",
+        "Blood glucose",
+        "Liver enzymes",
+        "Electrolytes"
+      ],
+      "answer_index": 0,
+      "rationale": "CBC is essential to monitor for bone marrow suppression, a common side effect. Blood glucose, liver enzymes, and electrolytes are less critical initially.",
+      "cognitive_level": "application",
+      "id": "q-63"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Nursing Priorities",
+      "stem": "A client with AIDS develops severe oral thrush and refuses to eat. What is the nurse\u2019s priority action?",
+      "options": [
+        "Notify the provider for antifungal treatment",
+        "Encourage eating small frequent meals",
+        "Provide mouth rinse with salt water",
+        "Offer high-calorie oral supplements"
+      ],
+      "answer_index": 0,
+      "rationale": "Severe thrush requires medical treatment with antifungals. While nutrition support is important, initiating therapy to control infection takes priority.",
+      "cognitive_level": "prioritization",
+      "id": "q-64"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Patient Teaching",
+      "stem": "Which statement shows understanding of infection prevention for a client with neutropenia?",
+      "options": [
+        "I will avoid crowded places",
+        "I can still garden without gloves",
+        "I should skip my vaccinations",
+        "I do not need to wash fruits before eating"
+      ],
+      "answer_index": 0,
+      "rationale": "Avoiding crowds reduces infection exposure. Gardening without gloves and ignoring food washing increase risk. Vaccinations may be necessary but should be discussed with providers.",
+      "cognitive_level": "application",
+      "id": "q-65"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Infection Control",
+      "stem": "When caring for a client with MRSA in a wound, which isolation precaution is appropriate?",
+      "options": [
+        "Contact precautions with glove and gown",
+        "Airborne precautions with N95 mask",
+        "Droplet precautions with surgical mask",
+        "No special precautions needed"
+      ],
+      "answer_index": 0,
+      "rationale": "MRSA requires contact precautions involving gloves and gowns to prevent transmission. Airborne and droplet precautions are not indicated for MRSA. No precautions risk spread.",
+      "cognitive_level": "recall",
+      "id": "q-66"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Lab Interpretation",
+      "stem": "Which lab finding best indicates effective immune response in a client with HIV?",
+      "options": [
+        "Increasing CD4 T-cell count",
+        "Elevated ESR",
+        "High viral load",
+        "Low hemoglobin"
+      ],
+      "answer_index": 0,
+      "rationale": "An increasing CD4 count reflects improving immune status. Elevated ESR indicates inflammation; high viral load signals active infection; low hemoglobin relates to anemia.",
+      "cognitive_level": "analysis",
+      "id": "q-67"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Medication and Monitoring",
+      "stem": "What is the main reason for routine liver function tests in clients on antiretroviral medications?",
+      "options": [
+        "Detect early drug-induced hepatotoxicity",
+        "Monitor for kidney failure",
+        "Evaluate blood sugar control",
+        "Check electrolyte balance"
+      ],
+      "answer_index": 0,
+      "rationale": "Many antiretrovirals can be hepatotoxic; liver tests detect damage early. Kidney, glucose, and electrolytes are monitored separately.",
+      "cognitive_level": "application",
+      "id": "q-68"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Nursing Priorities",
+      "stem": "A newly diagnosed HIV client presents with fever, cough, and shortness of breath. What should the nurse do first?",
+      "options": [
+        "Place client on airborne isolation",
+        "Administer antipyretics",
+        "Schedule chest x-ray",
+        "Obtain complete blood count"
+      ],
+      "answer_index": 0,
+      "rationale": "Symptoms suggest possible Pneumocystis pneumonia, requiring airborne precautions due to infection risk. Treatment and tests follow isolation protocols.",
+      "cognitive_level": "prioritization",
+      "id": "q-69"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Patient Teaching",
+      "stem": "Which teaching is essential for a client starting protease inhibitors?",
+      "options": [
+        "Take medication with meals to reduce GI upset",
+        "Avoid all physical activity",
+        "Ignore side effects unless severe",
+        "Stop therapy if feels better"
+      ],
+      "answer_index": 0,
+      "rationale": "Taking protease inhibitors with food improves absorption and reduces GI side effects. Physical activity is encouraged unless contraindicated; side effects need reporting; never stop without guidance.",
+      "cognitive_level": "application",
+      "id": "q-70"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Infection Control",
+      "stem": "What is the best action for a nurse to prevent infection when handling sharps after drawing blood from an HIV-positive client?",
+      "options": [
+        "Use a sharps container immediately after use",
+        "Recap needles carefully to avoid injury",
+        "Place sharps on bedside table after use",
+        "Dispose of sharps with regular trash"
+      ],
+      "answer_index": 0,
+      "rationale": "Using a sharps container immediately prevents needlestick injuries and cross-contamination. Recapping needles and improper disposal increase risk.",
+      "cognitive_level": "recall",
+      "id": "q-71"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Lab Interpretation",
+      "stem": "An HIV client\u2019s CD4 count drops by 50 cells/mm\u00b3 since last visit. What is the best nursing interpretation?",
+      "options": [
+        "Monitor closely and assess for infection",
+        "Patient is cured of HIV",
+        "No action needed unless viral load rises",
+        "Start corticosteroids"
+      ],
+      "answer_index": 0,
+      "rationale": "A drop in CD4 count signals worsening immune status; monitoring and infection assessment are indicated. The client is not cured; corticosteroids are not routinely started based on this alone.",
+      "cognitive_level": "analysis",
+      "id": "q-72"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Nursing Priorities",
+      "stem": "During a community outbreak of influenza, which HIV-positive client should the nurse see first?",
+      "options": [
+        "Client with fever and productive cough",
+        "Client with headache only",
+        "Client following medication regimen with no symptoms",
+        "Client with recent negative flu test"
+      ],
+      "answer_index": 0,
+      "rationale": "Fever and productive cough in an immunocompromised client suggests possible influenza needing rapid evaluation. Others are lower priority due to less risk or no symptoms.",
+      "cognitive_level": "prioritization",
+      "id": "q-73"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "HIV Infection Control",
+      "stem": "A nurse is caring for a client with AIDS who has a new diagnosis of oral thrush. Which precaution is most essential to prevent spread of infection?",
+      "options": [
+        "Standard precautions with hand hygiene",
+        "Droplet precautions",
+        "Contact precautions with gloves and gown",
+        "Airborne precautions with N95 mask"
+      ],
+      "answer_index": 0,
+      "rationale": "Standard precautions including strict hand hygiene are sufficient for preventing spread of oral thrush, a fungal infection, in clients with AIDS. Droplet, contact, and airborne precautions are not routinely required unless specific colonization or airborne pathogens are present.",
+      "cognitive_level": "application",
+      "id": "q-74"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Lab Interpretation - HIV",
+      "stem": "A client with HIV has the following lab results: CD4 count 400 cells/mm\u00b3, viral load 50,000 copies/mL. What does this suggest about the client\u2019s disease status?",
+      "options": [
+        "Early HIV infection with active viral replication",
+        "Advanced AIDS with immune failure",
+        "Effective viral suppression",
+        "Complete immune recovery"
+      ],
+      "answer_index": 0,
+      "rationale": "A CD4 count of 400 indicates some immune compromise but not advanced AIDS; a viral load of 50,000 shows active viral replication and incomplete viral control. This suggests early or untreated HIV infection. Viral suppression would be indicated by a low or undetectable viral load.",
+      "cognitive_level": "analysis",
+      "id": "q-75"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Medication Safety - Antiretroviral Therapy",
+      "stem": "Which teaching point should a nurse prioritize when a client starts a new protease inhibitor?",
+      "options": [
+        "Take medication with food to reduce GI upset",
+        "Avoid all sunlight exposure",
+        "Do not skip doses and always take at the same time",
+        "Stop medication if feeling nauseated"
+      ],
+      "answer_index": 2,
+      "rationale": "Consistency in dosing schedules is essential for protease inhibitors to maintain therapeutic drug levels and prevent resistance. Taking with food helps GI symptoms but consistent timing is higher priority. Avoiding sunlight is not generally required. Stopping medication abruptly risks resistance and is unsafe.",
+      "cognitive_level": "prioritization",
+      "id": "q-76"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Infection Control - Tuberculosis",
+      "stem": "Which personal protective equipment (PPE) is most appropriate when entering the room of a client with active multidrug-resistant tuberculosis?",
+      "options": [
+        "N95 respirator mask",
+        "Surgical mask",
+        "Gloves and gown only",
+        "Face shield"
+      ],
+      "answer_index": 0,
+      "rationale": "An N95 respirator provides adequate protection against airborne transmission of TB, especially multidrug-resistant strains. Surgical masks do not filter small airborne particles. Gloves and gowns are important but do not protect against inhalation of airborne pathogens. Face shields protect eyes but not respiratory inhalation.",
+      "cognitive_level": "recall",
+      "id": "q-77"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Nursing Prioritization - Immunocompromised",
+      "stem": "A client with HIV has severe neutropenia and a new fever of 101.8\u00b0F. What is the nurse\u2019s highest priority action?",
+      "options": [
+        "Initiate neutropenic precautions immediately",
+        "Notify the healthcare provider STAT",
+        "Obtain a blood culture sample",
+        "Provide antipyretics as ordered"
+      ],
+      "answer_index": 1,
+      "rationale": "Fever in a neutropenic client is a medical emergency requiring immediate notification for possible initiation of broad-spectrum antibiotics. While cultures, precautions, and antipyretics are important, rapid provider notification is the highest priority to prevent sepsis.",
+      "cognitive_level": "prioritization",
+      "id": "q-78"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Laboratory Monitoring - Antiretroviral Therapy",
+      "stem": "Which laboratory test is most important to monitor regularly in a client taking zidovudine?",
+      "options": [
+        "Liver function tests",
+        "Complete blood count",
+        "Serum creatinine",
+        "Blood glucose"
+      ],
+      "answer_index": 1,
+      "rationale": "Zidovudine can cause bone marrow suppression leading to anemia and neutropenia; therefore, CBC must be closely monitored. Liver and kidney functions are important but secondary. Blood glucose is not typically affected by zidovudine.",
+      "cognitive_level": "recall",
+      "id": "q-79"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Therapeutic Communication - HIV Disclosure",
+      "stem": "A client newly diagnosed with HIV expresses fear about telling family. What is the nurse\u2019s most therapeutic response?",
+      "options": [
+        "You must tell your family for support",
+        "What concerns do you have about telling them?",
+        "I will inform your family if you refuse",
+        "Avoid telling anyone to protect your privacy"
+      ],
+      "answer_index": 1,
+      "rationale": "Encouraging the client to express concerns supports therapeutic rapport and respects autonomy. Forcing disclosure or making decisions for the client is inappropriate. Advising avoidance dismisses coping needs and support opportunities.",
+      "cognitive_level": "application",
+      "id": "q-80"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Medication Monitoring - Opportunistic Infection Prevention",
+      "stem": "A client with a CD4 count below 200 starts trimethoprim-sulfamethoxazole prophylaxis. Which adverse effect should the nurse closely monitor?",
+      "options": [
+        "Skin rash and Stevens-Johnson syndrome",
+        "Tinnitus and hearing loss",
+        "Cough and dyspnea",
+        "Weight gain"
+      ],
+      "answer_index": 0,
+      "rationale": "Trimethoprim-sulfamethoxazole can cause severe skin reactions, including Stevens-Johnson syndrome, which requires immediate cessation. Tinnitus, respiratory symptoms, and weight gain are less commonly associated with this medication.",
+      "cognitive_level": "application",
+      "id": "q-81"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Prioritization - Infectious Disease Symptoms",
+      "stem": "A client with suspected bacterial meningitis reports worsening headache and neck stiffness. Which action should the nurse prioritize?",
+      "options": [
+        "Administer prescribed analgesics",
+        "Prepare for immediate lumbar puncture",
+        "Isolate client with droplet precautions",
+        "Encourage oral fluids"
+      ],
+      "answer_index": 2,
+      "rationale": "Bacterial meningitis requires droplet precautions to prevent spread. While lumbar puncture is important, the nurse must first implement correct isolation. Analgesics and oral fluids are supportive but secondary to infection control and diagnosis.",
+      "cognitive_level": "prioritization",
+      "id": "q-82"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Medication Safety - Antiretroviral Therapy",
+      "stem": "A client on efavirenz reports vivid dreams and difficulty sleeping. What is the best nursing action?",
+      "options": [
+        "Advise taking medication at bedtime",
+        "Suggest skipping doses when symptoms occur",
+        "Tell client to stop medication immediately",
+        "Report symptoms to healthcare provider"
+      ],
+      "answer_index": 3,
+      "rationale": "Vivid dreams and insomnia are common CNS side effects of efavirenz and require provider assessment to consider dose adjustment or medication change. Taking at bedtime may not reduce side effects. Stopping medication without provider guidance can cause resistance.",
+      "cognitive_level": "application",
+      "id": "q-83"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Infection Control - Neutropenic Clients",
+      "stem": "Which statement by a client with neutropenia indicates understanding of preventing infection?",
+      "options": [
+        "I will avoid crowds and sick people",
+        "I will eat raw fruits to boost my vitamins",
+        "I don\u2019t need to wash my hands often",
+        "I will stop my antibiotic when feeling better"
+      ],
+      "answer_index": 0,
+      "rationale": "Avoiding crowds and sick contacts reduces infection risk in neutropenic clients. Raw fruits may contain bacteria and should be avoided or properly washed. Frequent hand hygiene is critical. Stopping antibiotics early risks treatment failure and resistance.",
+      "cognitive_level": "recall",
+      "id": "q-84"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Lab Interpretation - Opportunistic Infection",
+      "stem": "Which lab result best indicates opportunistic infection in an HIV-positive client?",
+      "options": [
+        "CD4 count 50 cells/mm\u00b3",
+        "White blood cell count 11,000/mm\u00b3",
+        "Hemoglobin 14 g/dL",
+        "Platelets 250,000/mm\u00b3"
+      ],
+      "answer_index": 0,
+      "rationale": "A CD4 count below 200, especially near 50, indicates severe immunosuppression and high risk for opportunistic infections. Elevated WBC count can indicate infection but is less specific. Normal hemoglobin and platelets do not indicate opportunistic infection.",
+      "cognitive_level": "analysis",
+      "id": "q-85"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Prioritization - HIV Patient with Symptoms",
+      "stem": "A client with HIV presents with fever, cough, and shortness of breath. What is the nurse\u2019s priority action?",
+      "options": [
+        "Obtain sputum for culture",
+        "Initiate oxygen therapy",
+        "Place client in isolation",
+        "Administer prescribed antipyretics"
+      ],
+      "answer_index": 2,
+      "rationale": "Respiratory symptoms in HIV patients require droplet or airborne isolation to prevent transmission of tuberculosis or other infections. Isolation protects others until diagnosis is confirmed. Oxygen and cultures are important but secondary to infection control. Antipyretics relieve symptoms but don\u2019t address transmission risk.",
+      "cognitive_level": "prioritization",
+      "id": "q-86"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Patient Teaching - HIV Medication Adherence",
+      "stem": "Which instruction best promotes medication adherence in a client starting HAART?",
+      "options": [
+        "Take all medications exactly as prescribed without missing doses",
+        "Only take medications when feeling ill",
+        "Double doses if a dose was missed",
+        "Stop medication if side effects occur"
+      ],
+      "answer_index": 0,
+      "rationale": "Strict adherence to HAART is essential for viral suppression and preventing resistance. Taking medications only when sick, doubling doses, or stopping medications due to side effects undermines treatment efficacy and can cause harm.",
+      "cognitive_level": "recall",
+      "id": "q-87"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Nursing Prioritization - Post-Exposure Management",
+      "stem": "A nurse experiences a needlestick injury caring for an HIV-positive client. What is the nurse\u2019s first action?",
+      "options": [
+        "Report the incident and start post-exposure prophylaxis",
+        "Wash the site with soap and water",
+        "Notify the client\u2019s healthcare provider",
+        "Fill out an incident report"
+      ],
+      "answer_index": 1,
+      "rationale": "Immediate washing of the needlestick site with soap and water reduces viral load exposure. Reporting and initiating post-exposure prophylaxis are vital but come after immediate wound care. Incident reports and notifications are subsequent steps.",
+      "cognitive_level": "prioritization",
+      "id": "q-88"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "postoperative complications",
+      "stem": "Which sign in the first 24 hours after abdominal surgery most likely indicates internal bleeding?",
+      "options": [
+        "Increased heart rate and decreasing blood pressure",
+        "Low-grade fever and chills",
+        "Slight swelling and bruising around the incision",
+        "Mild pain controlled with oral analgesics"
+      ],
+      "answer_index": 0,
+      "rationale": "Tachycardia combined with hypotension suggests hypovolemia due to internal bleeding. Fever and chills suggest infection, which typically develops later. Mild swelling and bruising are normal post-op findings. Mild pain controlled by oral meds does not indicate bleeding.",
+      "cognitive_level": "analysis",
+      "id": "q-89"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "oxygenation",
+      "stem": "For a client with chronic obstructive pulmonary disease (COPD), which oxygen delivery goal is safest to prevent complications?",
+      "options": [
+        "Maintain oxygen saturation at 88-92%",
+        "Keep oxygen saturation above 98%",
+        "Use 100% oxygen during exercise",
+        "Limit oxygen to 1 liter per minute regardless of saturation"
+      ],
+      "answer_index": 0,
+      "rationale": "COPD patients rely on hypoxic drive; maintaining saturation between 88-92% provides adequate oxygen without suppressing respiratory drive. Higher saturations can reduce respiratory drive. Using 100% oxygen unnecessarily raises CO2 retention risk. Arbitrary 1 L/min regardless of saturation may be insufficient.",
+      "cognitive_level": "application",
+      "id": "q-90"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "mobility/safety",
+      "stem": "Which intervention best prevents falls in a hospitalized client with muscle weakness and recent dizziness?",
+      "options": [
+        "Encourage use of call light before ambulation",
+        "Apply wrist restraints when out of bed",
+        "Allow free ambulation to promote independence",
+        "Restrict fluids to reduce nighttime bathroom visits"
+      ],
+      "answer_index": 0,
+      "rationale": "Using the call light ensures the client requests assistance before moving, reducing fall risk. Restraints limit mobility and increase injury risk. Allowing free ambulation without assistance increases fall risk. Restricting fluids can cause dehydration and is not a first-line fall prevention measure.",
+      "cognitive_level": "prioritization",
+      "id": "q-91"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "perioperative care",
+      "stem": "Which preoperative teaching topic best reduces the risk of postoperative pneumonia?",
+      "options": [
+        "Incentive spirometry use and deep breathing exercises",
+        "Strict bed rest after surgery",
+        "Avoiding physical activity before surgery",
+        "Avoiding all liquids 8 hours prior"
+      ],
+      "answer_index": 0,
+      "rationale": "Teaching incentive spirometry and deep breathing helps prevent atelectasis and pneumonia. Bed rest increases pulmonary stasis risk. Preoperative inactivity is unavoidable but shouldn\u2019t be encouraged. NPO status is important but unrelated to pneumonia prevention.",
+      "cognitive_level": "application",
+      "id": "q-92"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "fluid/electrolyte/acid-base",
+      "stem": "A client with diarrhea has a serum potassium of 3.0 mEq/L. What nursing action is most important?",
+      "options": [
+        "Monitor cardiac rhythm continuously",
+        "Restrict potassium intake",
+        "Increase intravenous fluids with dextrose",
+        "Administer antidiarrheal agents immediately"
+      ],
+      "answer_index": 0,
+      "rationale": "Hypokalemia can cause dangerous arrhythmias; continuous cardiac monitoring is essential. Restricting potassium worsens hypokalemia. IV fluids with dextrose don\u2019t correct potassium. Antidiarrheals may be contraindicated and do not directly affect potassium.",
+      "cognitive_level": "prioritization",
+      "id": "q-93"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "pain",
+      "stem": "Which assessment question best helps evaluate a client\u2019s pain following abdominal surgery?",
+      "options": [
+        "Can you describe the pain's location, quality, and intensity?",
+        "Do you feel anxious about your surgery?",
+        "Are you able to sleep through the night?",
+        "Have you taken all the prescribed pain meds?"
+      ],
+      "answer_index": 0,
+      "rationale": "Detailed pain characteristics guide effective management. Anxiety and sleep are important but secondary. Medication adherence does not assess current pain quality.",
+      "cognitive_level": "recall",
+      "id": "q-94"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "gastrointestinal integration",
+      "stem": "A client with cirrhosis develops confusion and asterixis. Which lab value should the nurse check promptly?",
+      "options": [
+        "Serum ammonia level",
+        "Serum potassium level",
+        "Serum albumin level",
+        "Blood glucose level"
+      ],
+      "answer_index": 0,
+      "rationale": "Elevated ammonia causes hepatic encephalopathy symptoms like confusion and asterixis. Potassium, albumin, and glucose affect health but do not directly produce these neuro signs.",
+      "cognitive_level": "analysis",
+      "id": "q-95"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "postoperative complications",
+      "stem": "What is the earliest indication of a wound infection in a post-op client?",
+      "options": [
+        "Redness and warmth around the incision",
+        "Foul-smelling drainage",
+        "Elevated temperature over 101\u00b0F",
+        "Increased pain at the surgical site"
+      ],
+      "answer_index": 0,
+      "rationale": "Erythema and warmth are early local infection signs. Foul drainage and high fever appear later. Increased pain can occur normally after surgery and is less specific.",
+      "cognitive_level": "application",
+      "id": "q-96"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "oxygenation",
+      "stem": "Which nursing action is priority when a client using a non-rebreather mask shows sudden restlessness and decreased oxygen saturation?",
+      "options": [
+        "Check for proper mask fit and oxygen flow",
+        "Increase oxygen flow rate to maximum",
+        "Remove the mask and apply nasal cannula",
+        "Encourage deep and slow breathing"
+      ],
+      "answer_index": 0,
+      "rationale": "Ensuring correct mask placement and oxygen flow address possible delivery problems causing hypoxia. Increasing flow blindly without checking mask fit may be ineffective. Removing the mask without ensuring adequate oxygen worsens hypoxia. Breathing encouragement is secondary.",
+      "cognitive_level": "prioritization",
+      "id": "q-97"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "mobility/safety",
+      "stem": "Which device is most appropriate to prevent pressure ulcers in a bedridden client with limited mobility?",
+      "options": [
+        "Pressure-relieving mattress overlay",
+        "Physical restraints",
+        "Frequent use of heating pads",
+        "Tight bed sheets for skin support"
+      ],
+      "answer_index": 0,
+      "rationale": "Pressure-relieving mattress redistributes pressure to prevent skin breakdown. Restraints increase immobility and risk. Heating pads can cause burns. Tight sheets may cause skin irritation and do not prevent ulcers.",
+      "cognitive_level": "application",
+      "id": "q-98"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "palliative care",
+      "stem": "Which statement by a client\u2019s family member shows readiness to discuss end-of-life care preferences?",
+      "options": [
+        "We want to focus on comfort and dignity.",
+        "Make sure they get every possible treatment.",
+        "Let's keep hoping for a miracle.",
+        "Don't tell the patient about their prognosis."
+      ],
+      "answer_index": 0,
+      "rationale": "Focusing on comfort and dignity indicates acceptance and readiness for palliative care discussion. Demanding all treatments shows denial. Hoping for a miracle delays discussions. Withholding prognosis contradicts informed consent.",
+      "cognitive_level": "analysis",
+      "id": "q-99"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "perioperative care",
+      "stem": "After surgery, a client has sudden chest pain and shortness of breath. What is the nurses\u2019 immediate action?",
+      "options": [
+        "Call for emergency help and administer oxygen",
+        "Encourage coughing and deep breathing",
+        "Give prescribed pain medication",
+        "Reposition client supine"
+      ],
+      "answer_index": 0,
+      "rationale": "Sudden chest pain and dyspnea post-op suggest pulmonary embolism, a medical emergency requiring rapid response and oxygen. Coughing/deep breathing is preventive but not priority. Pain meds may mask symptoms. Supine position may worsen respiratory status.",
+      "cognitive_level": "prioritization",
+      "id": "q-100"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "fluid/electrolyte/acid-base",
+      "stem": "What clinical sign most likely indicates metabolic acidosis in a client with diabetic ketoacidosis?",
+      "options": [
+        "Rapid, deep respirations",
+        "Slow, shallow respirations",
+        "Bounding pulse",
+        "Bradycardia"
+      ],
+      "answer_index": 0,
+      "rationale": "Kussmaul respirations are a compensatory mechanism for metabolic acidosis. Slow respirations are seen with respiratory depression. Bounding pulse and bradycardia are unrelated.",
+      "cognitive_level": "recall",
+      "id": "q-101"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "pain",
+      "stem": "Which nonverbal behavior suggests a client is experiencing moderate to severe pain?",
+      "options": [
+        "Facial grimacing and guarding",
+        "Calm facial expression",
+        "Engaging in social conversation",
+        "Normal vital signs"
+      ],
+      "answer_index": 0,
+      "rationale": "Facial grimacing and guarding reflect discomfort. Calm expression and conversation may indicate absence of distress. Normal vitals do not rule out pain.",
+      "cognitive_level": "analysis",
+      "id": "q-102"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "gastrointestinal integration",
+      "stem": "A client with a nasogastric tube reports nausea and abdominal fullness. What is the best initial nursing action?",
+      "options": [
+        "Check tube placement and patency",
+        "Administer antiemetic medication",
+        "Increase tube feeding rate",
+        "Notify provider to discontinue tube"
+      ],
+      "answer_index": 0,
+      "rationale": "Nausea and fullness can indicate tube blockage or malposition; verifying placement and patency prevents complications. Antiemetics and increasing feeding rate without addressing mechanical issues are unsafe. Provider notification is needed if problems persist.",
+      "cognitive_level": "prioritization",
+      "id": "q-103"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Postoperative complications",
+      "stem": "A client develops sudden calf pain and swelling on postoperative day 3. What is the nurse\u2019s priority action?",
+      "options": [
+        "Notify the provider immediately about possible deep vein thrombosis",
+        "Apply ice to the affected leg and elevate it",
+        "Encourage ambulation to improve circulation",
+        "Administer prescribed pain medication for comfort"
+      ],
+      "answer_index": 0,
+      "rationale": "Sudden calf pain and swelling postoperatively suggests deep vein thrombosis (DVT), a serious complication requiring prompt medical evaluation. Ice and elevation may help but do not address risk of embolism. Encouraging ambulation is contraindicated until DVT is ruled out. Pain meds do not treat the underlying issue.",
+      "cognitive_level": "prioritization",
+      "id": "q-104"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Oxygenation",
+      "stem": "Which symptom best indicates early hypoxemia in a client with chronic obstructive pulmonary disease (COPD)?",
+      "options": [
+        "Restlessness and anxiety",
+        "Bradycardia",
+        "Cyanosis of the lips",
+        "Decreased respiratory rate"
+      ],
+      "answer_index": 0,
+      "rationale": "Restlessness and anxiety are early indicators of hypoxemia due to brain hypoxia. Bradycardia, cyanosis, and decreased respiratory rate typically occur later as oxygen deprivation worsens.",
+      "cognitive_level": "recall",
+      "id": "q-105"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Mobility and safety",
+      "stem": "A client with a recent hip replacement is beginning physical therapy. Which action best reduces the risk of dislocation?",
+      "options": [
+        "Keep the affected leg in slight abduction with toes pointing upward",
+        "Encourage crossing the legs while sitting",
+        "Allow full weight bearing on the operative leg immediately",
+        "Position the client supine with hips flexed more than 90 degrees"
+      ],
+      "answer_index": 0,
+      "rationale": "Maintaining abduction and proper alignment prevents dislocation. Crossing legs and hip flexion greater than 90 degrees increase dislocation risk. Weight bearing is usually limited initially to protect the joint.",
+      "cognitive_level": "application",
+      "id": "q-106"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Palliative care",
+      "stem": "A client with terminal cancer is experiencing increased fatigue and decreased appetite. What is the nurse\u2019s best supportive intervention?",
+      "options": [
+        "Encourage small, frequent meals rich in calories and protein",
+        "Force the client to eat three large meals daily",
+        "Schedule vigorous exercise to stimulate appetite",
+        "Limit fluids to reduce fatigue"
+      ],
+      "answer_index": 0,
+      "rationale": "Small, nutrient-dense meals accommodate decreased appetite and help maintain nutrition. Forcing large meals, vigorous exercise, or fluid restriction are inappropriate and can worsen symptoms or nutrition.",
+      "cognitive_level": "application",
+      "id": "q-107"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Perioperative care",
+      "stem": "Which preoperative teaching best reduces the risk of postoperative pneumonia?",
+      "options": [
+        "Practice deep breathing and incentive spirometry exercises",
+        "Avoid all food and fluids for 24 hours before surgery",
+        "Take only minimal fluids on the morning of surgery",
+        "Use opioid analgesics preoperatively for pain control"
+      ],
+      "answer_index": 0,
+      "rationale": "Deep breathing and incentive spirometry postoperatively improve lung expansion and prevent pneumonia. Prolonged NPO, limiting fluids unnecessarily, and preop opioids do not prevent pneumonia and may cause complications.",
+      "cognitive_level": "application",
+      "id": "q-108"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Fluid/electrolyte/acid-base",
+      "stem": "A client with diabetic ketoacidosis is admitted with a blood glucose of 490 mg/dL and K+ of 5.8 mEq/L. Which intervention is priority?",
+      "options": [
+        "Start IV insulin infusion and monitor potassium closely",
+        "Administer potassium supplementation immediately",
+        "Initiate a potassium-restricted diet",
+        "Encourage oral potassium supplements"
+      ],
+      "answer_index": 0,
+      "rationale": "Insulin lowers blood glucose and shifts potassium into cells, potentially causing hypokalemia. Close potassium monitoring is crucial. Giving potassium now without knowing levels risks hyperkalemia. Diet changes and oral supplements are not immediate priorities.",
+      "cognitive_level": "prioritization",
+      "id": "q-109"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Pain management",
+      "stem": "A postoperative client reports pain rated 7/10 despite analgesics. Which response by the nurse is best?",
+      "options": [
+        "Assess pain characteristics and effectiveness of current meds",
+        "Tell the client to wait until next scheduled dose",
+        "Encourage distraction without adjusting meds",
+        "Advise that some pain is expected after surgery"
+      ],
+      "answer_index": 0,
+      "rationale": "Reassessing pain helps tailor management for adequate relief. Telling to wait or dismissing pain is ineffective and non-therapeutic. Distraction may help but does not replace medication when pain is severe.",
+      "cognitive_level": "application",
+      "id": "q-110"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Gastrointestinal integration",
+      "stem": "After abdominal surgery, a client develops abdominal distension and no bowel sounds. What is the nurse\u2019s priority action?",
+      "options": [
+        "Notify the provider of possible paralytic ileus",
+        "Encourage early ambulation",
+        "Administer a stool softener",
+        "Offer clear liquids by mouth"
+      ],
+      "answer_index": 0,
+      "rationale": "Distension and absent bowel sounds suggest paralytic ileus, which requires prompt physician notification for intervention. Ambulation and diet changes may help but are secondary. Stool softeners do not address ileus directly.",
+      "cognitive_level": "prioritization",
+      "id": "q-111"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Postoperative complications",
+      "stem": "Which sign best indicates early wound infection in a client after surgery?",
+      "options": [
+        "Increased localized redness and warmth",
+        "Mild bruising around incision",
+        "Transient low-grade fever within 12 hours",
+        "Sutures intact without drainage"
+      ],
+      "answer_index": 0,
+      "rationale": "Localized redness and warmth indicate inflammation from infection early on. Bruising is normal post-op, low-grade fever early post-op can be normal, and intact sutures without drainage do not suggest infection.",
+      "cognitive_level": "analysis",
+      "id": "q-112"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Oxygenation",
+      "stem": "A client on oxygen via nasal cannula reports nasal dryness and discomfort. What is the best nursing intervention?",
+      "options": [
+        "Apply water-based lubricant inside the nares",
+        "Increase oxygen flow rate",
+        "Switch to a simple face mask immediately",
+        "Remove oxygen temporarily"
+      ],
+      "answer_index": 0,
+      "rationale": "Water-based lubricants relieve nasal dryness safely. Increasing flow worsens dryness. Simple face masks provide higher oxygen but may not solve dryness. Removing oxygen risks hypoxia.",
+      "cognitive_level": "application",
+      "id": "q-113"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Palliative care",
+      "stem": "When communicating with a client receiving end-of-life care, which approach best supports therapeutic communication?",
+      "options": [
+        "Using open-ended questions to explore feelings",
+        "Redirecting conversation to positive topics only",
+        "Providing excessive medical jargon for clarity",
+        "Avoiding silence to keep the client talking"
+      ],
+      "answer_index": 0,
+      "rationale": "Open-ended questions allow expression of feelings and needs. Redirecting or excessive jargon can confuse or shut down communication. Silence can be therapeutic; avoiding it is not necessary.",
+      "cognitive_level": "application",
+      "id": "q-114"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Perioperative care",
+      "stem": "Which assessment finding 6 hours post-laparoscopic cholecystectomy most requires immediate nursing attention?",
+      "options": [
+        "Absent distal pulses in the lower extremities",
+        "Mild incisional pain rated 3/10",
+        "Clear urine output of 30 mL/hr",
+        "Mild nausea with no vomiting"
+      ],
+      "answer_index": 0,
+      "rationale": "Absent distal pulses suggest possible vascular compromise, requiring immediate action. Mild pain, adequate urine output, and mild nausea are expected and less urgent.",
+      "cognitive_level": "prioritization",
+      "id": "q-115"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Fluid/electrolyte/acid-base",
+      "stem": "Which clinical sign most suggests fluid volume excess in a hospitalized client?",
+      "options": [
+        "Peripheral edema and crackles in lungs",
+        "Tenting of skin and dry mucous membranes",
+        "Hypotension and tachycardia",
+        "Low urine output with concentrated urine"
+      ],
+      "answer_index": 0,
+      "rationale": "Edema and crackles indicate fluid overload. Tenting and dry membranes suggest dehydration. Hypotension and tachycardia are more consistent with hypovolemia. Concentrated urine suggests volume depletion.",
+      "cognitive_level": "analysis",
+      "id": "q-116"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Pain management",
+      "stem": "A client receiving PCA (patient-controlled analgesia) reports inadequate pain relief. What is the nurse\u2019s best initial action?",
+      "options": [
+        "Assess the client\u2019s pain level and pump settings",
+        "Instruct to press the button more frequently",
+        "Provide distraction techniques only",
+        "Tell the client to wait until next dose"
+      ],
+      "answer_index": 0,
+      "rationale": "Assessment of pain and PCA settings ensures effective analgesia. Simply instructing more button pressing without assessment is insufficient. Distraction does not replace adequate pain control. Waiting prolongs suffering unnecessarily.",
+      "cognitive_level": "application",
+      "id": "q-117"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Gastrointestinal integration",
+      "stem": "Which intervention best promotes safe swallowing in a client with oropharyngeal dysphagia?",
+      "options": [
+        "Thicken all liquids to a nectar consistency",
+        "Encourage rapid drinking to prevent coughing",
+        "Offer thin liquids to stimulate swallowing reflex",
+        "Avoid all oral intake and provide IV fluids only"
+      ],
+      "answer_index": 0,
+      "rationale": "Thickened liquids reduce aspiration risk in dysphagia. Rapid drinking and thin liquids increase choking risk. Avoiding all oral intake is unnecessary unless aspiration is severe and persistent.",
+      "cognitive_level": "application",
+      "id": "q-118"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Mobility and safety",
+      "stem": "A client with multiple sclerosis reports increasing falls at home due to leg weakness. What is the nurse\u2019s priority teaching?",
+      "options": [
+        "Use assistive devices and remove tripping hazards",
+        "Encourage high-impact exercises to strengthen legs",
+        "Advise wearing slippers instead of shoes for comfort",
+        "Limit mobility to prevent injury"
+      ],
+      "answer_index": 0,
+      "rationale": "Using assistive devices and maintaining a safe environment prevents falls. High-impact exercises may not be safe in severe weakness. Slippers can increase fall risk. Limiting mobility may worsen deconditioning.",
+      "cognitive_level": "application",
+      "id": "q-119"
+    },
+    {
+      "course": "Health Restoration 1",
+      "section": "Postoperative Complications",
+      "stem": "A client returns to the unit 4 hours after knee replacement surgery and reports increasing calf pain with swelling and redness. What is the nurse's best initial action?",
+      "options": [
+        "Notify the provider immediately for possible deep vein thrombosis",
+        "Elevate the leg and apply warm compresses",
+        "Encourage the client to perform ankle pumps",
+        "Administer prescribed opioid analgesics for pain relief"
+      ],
+      "answer_index": 0,
+      "rationale": "Calf pain with swelling and redness after knee surgery is concerning for deep vein thrombosis, which requires urgent evaluation to prevent complications such as pulmonary embolism. Elevation and warm compresses and encouraging ankle pumps are supportive but not the priority response. Opioids address pain but do not treat the underlying risk.",
+      "cognitive_level": "prioritization",
+      "id": "q-120"
+    }
+  ]
+}
