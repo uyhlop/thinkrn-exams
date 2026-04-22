@@ -3,20 +3,10 @@
   ======================
   Route: /sentinel  (password-gated — Ray only)
 
-  Purpose:
-  - Investor-facing market numbers (KC/MNU → national TAM/SAM/SOM)
-  - Visitor signal reader (from localStorage set by CohortHome)
-  - Private idea bank (localStorage only, never transmitted)
-  - Safety gate active: same 22-pattern block list as CohortHome
-
   Security model:
-  - Client-side password check only (hashed comparison)
-  - This is NOT a secure server auth — it is an obscurity layer
-    sufficient for a static GitHub Pages site with no sensitive PII
-  - No real user data is stored here — only Ray's own notes
-  - Password: stored as SHA-256 hex in PASS_HASH below
-    To change: run  crypto.subtle.digest('SHA-256', new TextEncoder().encode('yourpassword'))
-    then convert ArrayBuffer to hex string
+  - Client-side SHA-256 hash comparison only
+  - Password never stored in plaintext anywhere in this codebase
+  - No server, no PII, no transmission
 */
 
 import { AnimatePresence, motion } from "framer-motion";
@@ -40,14 +30,8 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-// ── Password gate ──────────────────────────────────────────────────────────────
-// SHA-256 of the sentinel password. Change this hash to change the password.
-// Current password is set by Ray — stored only as a hash, never plaintext.
-// To generate a new hash in the browser console:
-//   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('yourpassword'));
-//   console.log([...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join(''));
 const PASS_HASH =
-  "ef92b778bafe771207346ef9b5b626615b8c0a9fac8e10a15e0a7c6e3e1b5a2d"; // placeholder — Ray sets real hash locally after deploy
+  "07c81ae0d4382e7bc4ab4ae462db0c54857f57091c6f383a4fed0cacfb56b060";
 
 async function hashInput(input: string): Promise<string> {
   const buf = await crypto.subtle.digest(
@@ -59,7 +43,6 @@ async function hashInput(input: string): Promise<string> {
     .join("");
 }
 
-// ── Types ──────────────────────────────────────────────────────────────────────
 type SentinelTab = "market" | "signals" | "ideas";
 
 interface IdeaEntry {
@@ -69,7 +52,6 @@ interface IdeaEntry {
   ts: number;
 }
 
-// ── Market data ────────────────────────────────────────────────────────────────
 const marketLayers = [
   {
     icon: Building2,
@@ -161,24 +143,18 @@ const IDEA_CATEGORIES = [
   "Other",
 ];
 
-// ── Component ──────────────────────────────────────────────────────────────────
 export default function Sentinel() {
   const [unlocked, setUnlocked] = useState(false);
   const [passInput, setPassInput] = useState("");
   const [passError, setPassError] = useState("");
   const [showPass, setShowPass] = useState(false);
   const [activeTab, setActiveTab] = useState<SentinelTab>("market");
-
-  // Visitor signals
   const [signals, setSignals] = useState<string[]>([]);
-
-  // Idea bank
   const [ideas, setIdeas] = useState<IdeaEntry[]>([]);
   const [ideaText, setIdeaText] = useState("");
   const [ideaCat, setIdeaCat] = useState(IDEA_CATEGORIES[0]);
   const ideaRef = useRef<HTMLTextAreaElement>(null);
 
-  // Load data from localStorage after unlock
   useEffect(() => {
     if (!unlocked) return;
     try {
@@ -186,14 +162,11 @@ export default function Sentinel() {
         window.localStorage.getItem("thinkrn-visitor-signals") || "[]"
       ) as string[];
       setSignals(sigs.reverse());
-
       const stored = JSON.parse(
         window.localStorage.getItem("thinkrn-sentinel-ideas") || "[]"
       ) as IdeaEntry[];
       setIdeas(stored.sort((a, b) => b.ts - a.ts));
-    } catch {
-      /* localStorage may be blocked */
-    }
+    } catch { /* localStorage may be blocked */ }
   }, [unlocked]);
 
   const handleUnlock = async (e: React.FormEvent) => {
@@ -232,20 +205,16 @@ export default function Sentinel() {
     const next = ideas.filter((i) => i.id !== id);
     setIdeas(next);
     try {
-      window.localStorage.setItem(
-        "thinkrn-sentinel-ideas",
-        JSON.stringify(next)
-      );
+      window.localStorage.setItem("thinkrn-sentinel-ideas", JSON.stringify(next));
     } catch { /* silently fail */ }
   };
 
   const tabs: { key: SentinelTab; label: string; icon: typeof Brain }[] = [
-    { key: "market",  label: "Market",  icon: TrendingUp    },
-    { key: "signals", label: "Signals", icon: MessageSquare  },
-    { key: "ideas",   label: "Idea Bank",icon: Lightbulb     },
+    { key: "market",  label: "Market",   icon: TrendingUp   },
+    { key: "signals", label: "Signals",  icon: MessageSquare },
+    { key: "ideas",   label: "Idea Bank",icon: Lightbulb    },
   ];
 
-  // ── Password gate screen ──────────────────────────────────────────────────
   if (!unlocked) {
     return (
       <div className="relative min-h-screen overflow-hidden bg-background text-foreground flex items-center justify-center">
@@ -310,7 +279,7 @@ export default function Sentinel() {
             </form>
 
             <p className="text-center text-[10px] text-slate-600 leading-relaxed">
-              This area contains investor-facing market data and private notes.
+              Investor-facing market data and private notes.
               Client-side auth only — no server, no PII stored.
             </p>
           </div>
@@ -319,14 +288,12 @@ export default function Sentinel() {
     );
   }
 
-  // ── Unlocked dashboard ────────────────────────────────────────────────────
   return (
     <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
       <div className="pointer-events-none absolute inset-0 opacity-50">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(245,158,11,0.06),transparent_25%),linear-gradient(180deg,rgba(5,10,18,0.97),rgba(2,6,12,1))]" />
       </div>
 
-      {/* Header */}
       <div className="sticky top-0 z-40 border-b border-white/8 bg-background/80 backdrop-blur-md">
         <div className="container flex items-center justify-between gap-4 py-4">
           <div className="flex items-center gap-2">
@@ -344,11 +311,7 @@ export default function Sentinel() {
                   key={tab.key}
                   onClick={() => setActiveTab(tab.key)}
                   aria-current={activeTab === tab.key ? "page" : undefined}
-                  className={`nav-button ${
-                    activeTab === tab.key
-                      ? "border-amber-400/50 bg-amber-400/15"
-                      : ""
-                  }`}
+                  className={`nav-button ${activeTab === tab.key ? "border-amber-400/50 bg-amber-400/15" : ""}`}
                 >
                   <Icon className="h-4 w-4" aria-hidden="true" />
                   <span className="hidden sm:inline text-xs">{tab.label}</span>
@@ -362,34 +325,24 @@ export default function Sentinel() {
       <main className="container relative z-10 py-10 mx-auto" style={{ maxWidth: "720px" }}>
         <AnimatePresence mode="wait">
 
-          {/* ══ MARKET ══ */}
           {activeTab === "market" && (
-            <motion.div
-              key="market"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              className="space-y-6"
-            >
+            <motion.div key="market" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} className="space-y-6">
               <div>
                 <div className="eyebrow flex items-center gap-2">
                   <TrendingUp className="h-3.5 w-3.5" aria-hidden="true" />
                   Investor view · Confidential
                 </div>
                 <h2 className="section-title mt-1">
-                  Market size &
-                  <br />
+                  Market size &<br />
                   <span className="text-amber-200">funding model.</span>
                 </h2>
                 <p className="text-slate-300 text-sm leading-relaxed mt-4">
-                  ThinkRN starts hyper-local — one cohort, one city — and scales along a
-                  well-defined path. Every nursing student in the US studies toward the same
-                  nationally standardized exam. The content system that works for MNU works
-                  everywhere.
+                  ThinkRN starts hyper-local — one cohort, one city — and scales along a well-defined path.
+                  Every nursing student in the US studies toward the same nationally standardized exam.
+                  The content system that works for MNU works everywhere.
                 </p>
               </div>
 
-              {/* Market ladder */}
               <div className="card-shell p-6 space-y-5">
                 <div>
                   <div className="eyebrow">Scale ladder</div>
@@ -405,43 +358,25 @@ export default function Sentinel() {
                       slate:   "border-white/12 bg-white/5 text-slate-400",
                     };
                     const valColor: Record<string, string> = {
-                      amber:   "text-amber-100",
-                      cyan:    "text-cyan-100",
-                      emerald: "text-emerald-100",
-                      slate:   "text-slate-400",
+                      amber: "text-amber-100", cyan: "text-cyan-100",
+                      emerald: "text-emerald-100", slate: "text-slate-400",
                     };
                     return (
                       <li key={i} className="flex items-start gap-4">
-                        <div
-                          className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border ${
-                            colorMap[layer.color]
-                          }`}
-                          aria-hidden="true"
-                        >
+                        <div className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border ${colorMap[layer.color]}`} aria-hidden="true">
                           <Icon className="h-4 w-4" />
                         </div>
                         <div className="flex-1 min-w-0 space-y-0.5">
                           <div className="flex items-baseline gap-2 flex-wrap">
-                            <span
-                              className={`font-bold text-xl leading-none ${
-                                valColor[layer.color]
-                              }`}
-                            >
-                              {layer.value}
-                            </span>
+                            <span className={`font-bold text-xl leading-none ${valColor[layer.color]}`}>{layer.value}</span>
                             <span className="text-xs text-slate-500">{layer.unit}</span>
                           </div>
                           <p className="text-sm font-semibold text-white">{layer.label}</p>
                           <p className="text-xs text-slate-500">{layer.sublabel}</p>
-                          <p className="text-xs text-slate-400 leading-relaxed pt-1">
-                            {layer.detail}
-                          </p>
+                          <p className="text-xs text-slate-400 leading-relaxed pt-1">{layer.detail}</p>
                         </div>
                         {i < marketLayers.length - 1 && (
-                          <ChevronRight
-                            className="h-4 w-4 text-slate-700 shrink-0 mt-2.5"
-                            aria-hidden="true"
-                          />
+                          <ChevronRight className="h-4 w-4 text-slate-700 shrink-0 mt-2.5" aria-hidden="true" />
                         )}
                       </li>
                     );
@@ -449,7 +384,6 @@ export default function Sentinel() {
                 </ol>
               </div>
 
-              {/* Funding model */}
               <div className="card-shell p-6 space-y-5">
                 <div>
                   <div className="eyebrow">Funding model</div>
@@ -458,17 +392,11 @@ export default function Sentinel() {
                 <ol className="space-y-4">
                   {fundingModel.map((f, i) => (
                     <li key={i} className="flex items-start gap-4">
-                      <div
-                        className={`mt-0.5 shrink-0 rounded-full border px-2 py-0.5 text-[10px] uppercase tracking-widest font-semibold ${
-                          f.state === "active"
-                            ? "border-amber-400/40 bg-amber-400/10 text-amber-200"
-                            : f.state === "principle"
-                            ? "border-emerald-400/30 bg-emerald-400/8 text-emerald-200"
-                            : "border-white/10 bg-white/4 text-slate-500"
-                        }`}
-                      >
-                        {f.stage}
-                      </div>
+                      <div className={`mt-0.5 shrink-0 rounded-full border px-2 py-0.5 text-[10px] uppercase tracking-widest font-semibold ${
+                        f.state === "active" ? "border-amber-400/40 bg-amber-400/10 text-amber-200"
+                        : f.state === "principle" ? "border-emerald-400/30 bg-emerald-400/8 text-emerald-200"
+                        : "border-white/10 bg-white/4 text-slate-500"
+                      }`}>{f.stage}</div>
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-semibold text-white">{f.label}</p>
                         <p className="text-xs text-slate-400 leading-relaxed mt-0.5">{f.desc}</p>
@@ -478,7 +406,6 @@ export default function Sentinel() {
                 </ol>
               </div>
 
-              {/* Key proof points */}
               <div className="card-shell border-amber-400/15 bg-amber-400/5 p-6 space-y-4">
                 <div className="eyebrow text-amber-200/60">Proof points</div>
                 <ul className="space-y-2.5">
@@ -500,15 +427,8 @@ export default function Sentinel() {
             </motion.div>
           )}
 
-          {/* ══ SIGNALS ══ */}
           {activeTab === "signals" && (
-            <motion.div
-              key="signals"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              className="space-y-6"
-            >
+            <motion.div key="signals" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} className="space-y-6">
               <div>
                 <div className="eyebrow flex items-center gap-2">
                   <MessageSquare className="h-3.5 w-3.5" aria-hidden="true" />
@@ -516,32 +436,20 @@ export default function Sentinel() {
                 </div>
                 <h2 className="section-title mt-1">Visitor Signals</h2>
                 <p className="text-slate-400 text-sm leading-relaxed mt-3">
-                  These are messages visitors left in the signal box on the public hiatus page.
-                  Stored only in their browser's localStorage — if you're reading this on the
-                  same browser, their signals are here. Otherwise this will be empty.
+                  Messages visitors left on the public hiatus page — stored in their browser localStorage.
+                  If you're on the same device/browser they used, signals appear here.
                 </p>
               </div>
-
               {signals.length === 0 ? (
                 <div className="card-shell p-8 flex flex-col items-center text-center gap-3">
                   <MessageSquare className="h-8 w-8 text-slate-700" aria-hidden="true" />
-                  <p className="text-sm text-slate-500">
-                    No signals yet — or you're on a different browser than the visitors.
-                  </p>
-                  <p className="text-xs text-slate-600">
-                    Signals are browser-local by design. This is not a bug.
-                  </p>
+                  <p className="text-sm text-slate-500">No signals yet — or you're on a different browser than the visitors.</p>
+                  <p className="text-xs text-slate-600">Signals are browser-local by design. This is not a bug.</p>
                 </div>
               ) : (
                 <div className="space-y-3">
                   {signals.map((sig, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.04 }}
-                      className="card-shell p-4"
-                    >
+                    <motion.div key={i} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.04 }} className="card-shell p-4">
                       <p className="text-sm text-slate-200 leading-relaxed">{sig}</p>
                       <p className="text-[10px] text-slate-600 mt-2">Signal #{signals.length - i}</p>
                     </motion.div>
@@ -551,15 +459,8 @@ export default function Sentinel() {
             </motion.div>
           )}
 
-          {/* ══ IDEAS ══ */}
           {activeTab === "ideas" && (
-            <motion.div
-              key="ideas"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              className="space-y-6"
-            >
+            <motion.div key="ideas" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} className="space-y-6">
               <div>
                 <div className="eyebrow flex items-center gap-2">
                   <Lightbulb className="h-3.5 w-3.5" aria-hidden="true" />
@@ -567,44 +468,26 @@ export default function Sentinel() {
                 </div>
                 <h2 className="section-title mt-1">Idea Bank</h2>
                 <p className="text-slate-400 text-sm leading-relaxed mt-3">
-                  Capture ideas while you're away. Stored only in this browser. Never transmitted.
-                  Max 200 entries · 1,000 chars each.
+                  Capture ideas while you're away. Stored only in this browser. Never transmitted. Max 200 entries · 1,000 chars each.
                 </p>
               </div>
 
-              {/* Add idea form */}
               <div className="card-shell p-6 space-y-4">
                 <div className="eyebrow">New idea</div>
                 <form onSubmit={saveIdea} className="space-y-3">
-                  <div className="flex gap-2">
-                    <select
-                      value={ideaCat}
-                      onChange={(e) => setIdeaCat(e.target.value)}
-                      aria-label="Idea category"
-                      className="rounded-[1.2rem] border border-white/12 bg-white/6 px-3 py-2.5 text-xs text-white focus:border-amber-400/30 focus:outline-none"
-                    >
-                      {IDEA_CATEGORIES.map((c) => (
-                        <option key={c} value={c}>{c}</option>
-                      ))}
+                  <div className="flex gap-2 items-center">
+                    <select value={ideaCat} onChange={(e) => setIdeaCat(e.target.value)} aria-label="Idea category"
+                      className="rounded-[1.2rem] border border-white/12 bg-white/6 px-3 py-2.5 text-xs text-white focus:border-amber-400/30 focus:outline-none">
+                      {IDEA_CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
                     </select>
-                    <span className="text-xs text-slate-600 self-center">{ideaText.length}/1000</span>
+                    <span className="text-xs text-slate-600">{ideaText.length}/1000</span>
                   </div>
-                  <textarea
-                    ref={ideaRef}
-                    value={ideaText}
-                    onChange={(e) => setIdeaText(e.target.value)}
+                  <textarea ref={ideaRef} value={ideaText} onChange={(e) => setIdeaText(e.target.value)}
                     placeholder="Capture an idea, insight, or business thought while it's fresh…"
-                    rows={4}
-                    maxLength={1000}
-                    aria-label="New idea text"
-                    className="w-full rounded-[1.2rem] border border-white/12 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:border-amber-400/30 focus:outline-none resize-none leading-relaxed"
-                  />
+                    rows={4} maxLength={1000} aria-label="New idea text"
+                    className="w-full rounded-[1.2rem] border border-white/12 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:border-amber-400/30 focus:outline-none resize-none leading-relaxed" />
                   <div className="flex justify-end">
-                    <button
-                      type="submit"
-                      disabled={!ideaText.trim()}
-                      className="nav-button disabled:opacity-40"
-                    >
+                    <button type="submit" disabled={!ideaText.trim()} className="nav-button disabled:opacity-40">
                       <BookOpen className="h-4 w-4" aria-hidden="true" />
                       Save idea
                     </button>
@@ -612,7 +495,6 @@ export default function Sentinel() {
                 </form>
               </div>
 
-              {/* Idea list */}
               {ideas.length === 0 ? (
                 <div className="card-shell p-8 flex flex-col items-center text-center gap-3">
                   <Lightbulb className="h-8 w-8 text-slate-700" aria-hidden="true" />
@@ -621,34 +503,18 @@ export default function Sentinel() {
               ) : (
                 <div className="space-y-3">
                   {ideas.map((idea, i) => (
-                    <motion.div
-                      key={idea.id}
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.03 }}
-                      className="card-shell p-5 space-y-2"
-                    >
+                    <motion.div key={idea.id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.03 }} className="card-shell p-5 space-y-2">
                       <div className="flex items-start justify-between gap-3">
                         <span className="rounded-full border border-amber-400/25 bg-amber-400/8 px-2 py-0.5 text-[10px] uppercase tracking-widest text-amber-200/70">
                           {idea.category}
                         </span>
-                        <button
-                          onClick={() => deleteIdea(idea.id)}
-                          aria-label="Delete idea"
-                          className="shrink-0 text-slate-600 hover:text-red-400 transition"
-                        >
+                        <button onClick={() => deleteIdea(idea.id)} aria-label="Delete idea" className="shrink-0 text-slate-600 hover:text-red-400 transition">
                           <X className="h-4 w-4" />
                         </button>
                       </div>
                       <p className="text-sm text-slate-200 leading-relaxed">{idea.text}</p>
                       <p className="text-[10px] text-slate-600">
-                        {new Date(idea.ts).toLocaleDateString("en-US", {
-                          month: "short",
-                          day: "numeric",
-                          year: "numeric",
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        })}
+                        {new Date(idea.ts).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "2-digit", minute: "2-digit" })}
                       </p>
                     </motion.div>
                   ))}
