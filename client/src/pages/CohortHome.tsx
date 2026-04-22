@@ -1,615 +1,721 @@
-/* Cohort version: zero tracking, zero analytics bubble, completely open with About tab */
-import examContent from "@/data/examContent.json";
+/*
+  ThinkRN — CohortHome.tsx (Hiatus Mode + Safety Gate)
+  =====================================================
+  Route: /  (public cohort page — zero server tracking)
+
+  Safety gate logic:
+  - Client-side only. No data leaves the browser.
+  - Detects dangerous/misuse prompt patterns in the Q&A feedback box
+  - Auto-dismisses flagged input with a clear, non-punitive message
+  - Does NOT record, log, or transmit anything — pure local pattern check
+  - All content from publicly available nursing education resources (ATI, NCSBN)
+
+  Market context panel:
+  - Shows KC / MNU hyper-local footprint so visitors understand real scale
+  - Transparent about what this proves at small scale before going bigger
+*/
+
 import { AnimatePresence, motion } from "framer-motion";
 import {
+  AlertTriangle,
   Brain,
-  Briefcase,
   Building2,
-  ChevronLeft,
-  ChevronRight,
   Clock3,
-  Dumbbell,
+  GraduationCap,
+  Heart,
   Info,
-  Pause,
-  Play,
-  RefreshCcw,
+  Leaf,
+  Mail,
+  MapPin,
+  MessageSquare,
+  ShieldCheck,
   Stethoscope,
   TrendingUp,
+  Users,
+  X,
 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useRef, useState } from "react";
 
-type Term = {
-  id: string;
-  course: string;
-  deck: string;
-  term: string;
-  definition: string;
-  why_it_matters: string;
-};
+// ─── Types ────────────────────────────────────────────────────────────────────
 
-type Question = {
-  id: string;
-  course: string;
-  section: string;
-  stem: string;
-  options: string[];
-  answer_index: number;
-  rationale: string;
-  cognitive_level: "recall" | "application" | "analysis" | "prioritization";
-};
+type TabKey = "home" | "market" | "integrity" | "about";
+type FeedbackState = "idle" | "flagged" | "submitted";
 
-type AnswerMap = Record<string, number>;
-type VoteOption = "Terms-first" | "NCLEX drills" | "Mixed mode" | null;
-type TabKey = "terms" | "practice" | "scale" | "about";
-type MetricKey = Question["cognitive_level"];
+// ─── Safety Gate ──────────────────────────────────────────────────────────────
+// Client-side only. Zero transmission. Pattern matching for obvious misuse.
+// NOT a disciplinary system — it just stops unsafe content from appearing.
+
+const DANGEROUS_PATTERNS = [
+  // Exam cheating / answer extraction
+  /give\s+me\s+(the\s+)?answers?\s+(to|for)/i,
+  /what\s+are\s+the\s+real\s+answers/i,
+  /actual\s+exam\s+(questions?|answers?)/i,
+  /copy\s+(the\s+)?questions?\s+from/i,
+  /bypass\s+(the\s+)?(filter|integrity|safety)/i,
+  /ignore\s+(previous\s+)?(instructions?|rules?|guidelines?)/i,
+  // Jailbreak / prompt injection attempts
+  /pretend\s+you\s+are/i,
+  /you\s+are\s+now\s+(a\s+)?DAN/i,
+  /do\s+anything\s+now/i,
+  /act\s+as\s+(if\s+you\s+are\s+)?(an?\s+)?AI\s+without/i,
+  /override\s+(your\s+)?(safety|content|filter)/i,
+  /system\s+prompt/i,
+  /\[\[.*\]\]/i,
+  /<<.*>>/i,
+  // Clinical harm (not a medical advice tool)
+  /what\s+(dose|dosage|mg)\s+should\s+i\s+(give|take|administer)/i,
+  /can\s+i\s+(give|take)\s+\d+\s*mg/i,
+  /is\s+it\s+safe\s+to\s+overdose/i,
+  /how\s+(much|many)\s+.{0,30}\s+to\s+kill/i,
+  // Personal data harvesting
+  /what\s+is\s+(your\s+)?student\s+id/i,
+  /give\s+me\s+(the\s+)?list\s+of\s+(students?|cohort\s+members?)/i,
+];
+
+function isFlagged(text: string): boolean {
+  return DANGEROUS_PATTERNS.some((pattern) => pattern.test(text));
+}
+
+// ─── Constants ────────────────────────────────────────────────────────────────
 
 const tabs: { key: TabKey; label: string; icon: typeof Brain }[] = [
-  { key: "terms", label: "Terms", icon: Brain },
-  { key: "practice", label: "Practice Exam", icon: Stethoscope },
-  { key: "scale", label: "Investor Scale", icon: TrendingUp },
-  { key: "about", label: "About", icon: Info },
+  { key: "home",      label: "ThinkRN",   icon: Brain      },
+  { key: "market",    label: "KC / MNU",  icon: MapPin     },
+  { key: "integrity", label: "Integrity", icon: ShieldCheck},
+  { key: "about",     label: "About",     icon: Info       },
 ];
 
-const votingOptions: Exclude<VoteOption, null>[] = [
-  "Terms-first",
-  "NCLEX drills",
-  "Mixed mode",
-];
-
-const scaleCards = [
+const roadmapItems = [
   {
-    title: "Hormozi Model",
-    kicker: "$100M Offers logic for nursing education",
+    icon: GraduationCap,
+    label: "Semester 2 Complete",
+    sub: "January – April 2026 · All 4 courses",
+    state: "done",
+  },
+  {
+    icon: Leaf,
+    label: "Intentional Pause",
+    sub: "Stepping back to think before building further",
+    state: "active",
+  },
+  {
+    icon: Heart,
+    label: "Family & Support System",
+    sub: "Grounding the vision before continuing",
+    state: "active",
+  },
+  {
+    icon: Brain,
+    label: "Full Semester Content Bank",
+    sub: "All topics, all courses — complete flashcard + NCLEX set",
+    state: "next",
+  },
+  {
+    icon: Users,
+    label: "Nonprofit Partnerships",
+    sub: "Open to collaboration for access-focused distribution",
+    state: "next",
+  },
+  {
     icon: TrendingUp,
-    body:
-      "ThinkRN packages high-value exam prep, rapid feedback, and continuous content updates into a low-cost delivery loop. Human research through Sentinel creates the insight layer, while agents and workflows turn that research into repeatable study products without requiring a large staff.",
-    proof:
-      "The system already works at small scale: topic tracking, question generation, content packaging, and performance review happen in a repeatable sequence.",
-  },
-  {
-    title: "Enterprise Partnership Model",
-    kicker: "White-labeled for other industries",
-    icon: Building2,
-    body:
-      "The same system can be adapted for enterprises that need training, qualification support, or knowledge operations. Sentinel monitors the domain, Ray guides the research direction, and agents plus CRM workflows convert findings into usable learning or sales assets.",
-    proof:
-      "Investors are funding a flexible operating system: research, packaging, outreach, and follow-up can be retuned for multiple verticals without rebuilding from scratch.",
-  },
-  {
-    title: "College Athlete Recruitment",
-    kicker: "Data + CRM for NIL opportunity matching",
-    icon: Dumbbell,
-    body:
-      "The engagement-tracking logic also applies to athlete recruitment. Profiles, outreach history, response signals, content performance, and fit scoring can be organized so that relationship-building becomes faster and more disciplined.",
-    proof:
-      "Agents handle the repetitive monitoring and sorting, while the founder stays focused on human judgment, positioning, and relationship decisions.",
+    label: "ThinkRN v2 — Polished & Public",
+    sub: "Sliding-scale pricing · Open to public funding",
+    state: "next",
   },
 ];
 
-const levelLabels: Record<MetricKey, string> = {
-  recall: "Recall",
-  application: "Application",
-  analysis: "Analysis",
-  prioritization: "Prioritization",
-};
+const marketStats = [
+  {
+    icon: Building2,
+    label: "MNU Nursing Program",
+    value: "~120",
+    sub: "Students per cohort year",
+    detail:
+      "MidAmerica Nazarene University's nursing program in Olathe, KS — the hyper-local starting point. ThinkRN was built for this exact cohort.",
+  },
+  {
+    icon: Users,
+    label: "KC Metro Nursing Students",
+    value: "~2,400",
+    sub: "Active nursing students in Greater KC",
+    detail:
+      "UMKC, MNU, Graceland, Rockhurst, and community colleges across the metro. All studying the same NCLEX-RN test plan. One tool could serve all of them.",
+  },
+  {
+    icon: Stethoscope,
+    label: "NCLEX-RN Candidates (US)",
+    value: "~200K",
+    sub: "Test-takers per year nationally",
+    detail:
+      "The same publicly available content — ATI topic areas, NCSBN test plan — scales from one Kansas City cohort to every nursing student in the country.",
+  },
+  {
+    icon: GraduationCap,
+    label: "Proof of Concept",
+    value: "100%",
+    sub: "Built by one student, used by real peers",
+    detail:
+      "No team. No funding. No institution behind it yet. Just one nursing student, publicly available resources, and a system that already works at small scale.",
+  },
+];
 
-const terms = examContent.terms as Term[];
-const questions = examContent.questions as Question[];
-
-function formatTime(totalSeconds: number) {
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
-
-  return [hours, minutes, seconds]
-    .map((value, index) => (index === 0 ? String(value) : String(value).padStart(2, "0")))
-    .join(":");
-}
-
-function progressWidth(value: number, total: number) {
-  if (!total) return "0%";
-  return `${Math.max(0, Math.min(100, (value / total) * 100))}%`;
-}
+// ─── Component ────────────────────────────────────────────────────────────────
 
 export default function CohortHome() {
-  const [activeTab, setActiveTab] = useState<TabKey>("terms");
-  const [deck, setDeck] = useState<"all" | string>("all");
-  const [termIndex, setTermIndex] = useState(0);
-  const [flipped, setFlipped] = useState(false);
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState<AnswerMap>({});
-  const [showRationale, setShowRationale] = useState(false);
-  const [timerRunning, setTimerRunning] = useState(false);
-  const [elapsedSeconds, setElapsedSeconds] = useState(0);
-  const [breakDismissedAt, setBreakDismissedAt] = useState(0);
-  const [vote, setVote] = useState<VoteOption>(null);
+  const [activeTab, setActiveTab] = useState<TabKey>("home");
+  const [email, setEmail]         = useState("");
+  const [emailSaved, setEmailSaved] = useState(false);
+  const [feedback, setFeedback]   = useState("");
+  const [feedbackState, setFeedbackState] = useState<FeedbackState>("idle");
+  const [safetyMsg, setSafetyMsg] = useState("");
+  const feedbackRef = useRef<HTMLTextAreaElement>(null);
 
-  const deckOptions = useMemo(() => {
-    const uniqueDecks = Array.from(new Set(terms.map((term) => term.deck)));
-    return ["all", ...uniqueDecks];
-  }, []);
-
-  const filteredTerms = useMemo(() => {
-    if (deck === "all") return terms;
-    return terms.filter((term) => term.deck === deck);
-  }, [deck]);
-
-  const currentTerm = filteredTerms[termIndex] ?? filteredTerms[0];
-  const currentQuestion = questions[questionIndex];
-  const answeredCount = Object.keys(answers).length;
-  const correctCount = useMemo(
-    () => questions.filter((question) => answers[question.id] === question.answer_index).length,
-    [answers],
-  );
-
-  const accuracyRate = answeredCount ? Math.round((correctCount / answeredCount) * 100) : 0;
-
-  const cognitiveStats = useMemo(() => {
-    const base = {
-      recall: { correct: 0, total: 0 },
-      application: { correct: 0, total: 0 },
-      analysis: { correct: 0, total: 0 },
-      prioritization: { correct: 0, total: 0 },
-    } satisfies Record<MetricKey, { correct: number; total: number }>;
-
-    questions.forEach((question) => {
-      const selected = answers[question.id];
-      if (selected === undefined) return;
-      base[question.cognitive_level].total += 1;
-      if (selected === question.answer_index) {
-        base[question.cognitive_level].correct += 1;
-      }
-    });
-
-    return base;
-  }, [answers]);
-
-  const answeredMilestone = Math.floor(answeredCount / 25) * 25;
-  const showBreakReminder = answeredMilestone > 0 && answeredMilestone !== breakDismissedAt;
-
-  useEffect(() => {
-    setTermIndex(0);
-    setFlipped(false);
-  }, [deck]);
-
-  useEffect(() => {
-    if (!timerRunning) return;
-    const interval = window.setInterval(() => {
-      setElapsedSeconds((current) => current + 1);
-    }, 1000);
-    return () => window.clearInterval(interval);
-  }, [timerRunning]);
-
-  useEffect(() => {
-    const saved = window.localStorage.getItem("thinkrn-cohort-session");
-    if (!saved) return;
-
-    try {
-      const parsed = JSON.parse(saved) as {
-        activeTab: TabKey;
-        deck: string;
-        termIndex: number;
-        questionIndex: number;
-        answers: AnswerMap;
-        elapsedSeconds: number;
-        vote: VoteOption;
-      };
-      setActiveTab(parsed.activeTab ?? "terms");
-      setDeck(parsed.deck ?? "all");
-      setTermIndex(parsed.termIndex ?? 0);
-      setQuestionIndex(parsed.questionIndex ?? 0);
-      setAnswers(parsed.answers ?? {});
-      setElapsedSeconds(parsed.elapsedSeconds ?? 0);
-      setVote(parsed.vote ?? null);
-    } catch {
-      window.localStorage.removeItem("thinkrn-cohort-session");
-    }
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem(
-      "thinkrn-cohort-session",
-      JSON.stringify({
-        activeTab,
-        deck,
-        termIndex,
-        questionIndex,
-        answers,
-        elapsedSeconds,
-        vote,
-      }),
-    );
-  }, [activeTab, deck, termIndex, questionIndex, answers, elapsedSeconds, vote]);
-
-  const answeredCurrent = currentQuestion ? answers[currentQuestion.id] : undefined;
-  const practiceFinished = answeredCount === questions.length;
-
-  const selectAnswer = (index: number) => {
-    if (!currentQuestion) return;
-    setAnswers((current) => ({ ...current, [currentQuestion.id]: index }));
-    setShowRationale(true);
-    if (!timerRunning) setTimerRunning(true);
+  // ── Safety-gated feedback handler ──────────────────────────────────────────
+  // No server call. No logging. Just pattern check → local state.
+  const handleFeedbackChange = (val: string) => {
+    setFeedback(val);
+    if (feedbackState === "flagged") setFeedbackState("idle");
   };
 
-  const resetPractice = () => {
-    setAnswers({});
-    setShowRationale(false);
-    setQuestionIndex(0);
-    setElapsedSeconds(0);
-    setTimerRunning(false);
-    setBreakDismissedAt(0);
-    setVote(null);
+  const handleFeedbackSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = feedback.trim();
+    if (!trimmed) return;
+
+    if (isFlagged(trimmed)) {
+      setFeedbackState("flagged");
+      setSafetyMsg(
+        "That message pattern isn't something this tool can engage with. " +
+        "ThinkRN is a study and organization tool built on publicly available " +
+        "nursing education content. If you need help studying, the flashcard " +
+        "and practice exam tabs are available when the site relaunches."
+      );
+      setFeedback("");
+      return;
+    }
+
+    // In hiatus mode: no server. Store locally as a signal only.
+    // When Ray returns, he can review what visitors wanted.
+    try {
+      const existing = JSON.parse(
+        window.localStorage.getItem("thinkrn-visitor-signals") || "[]"
+      ) as string[];
+      existing.push(trimmed.slice(0, 280));
+      window.localStorage.setItem(
+        "thinkrn-visitor-signals",
+        JSON.stringify(existing.slice(-20))
+      );
+    } catch {
+      // localStorage may be blocked — silently fail
+    }
+    setFeedbackState("submitted");
+    setFeedback("");
+  };
+
+  const handleEmailSave = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email.includes("@")) {
+      try {
+        window.localStorage.setItem("thinkrn-notify-email", email);
+      } catch { /* silently fail if blocked */ }
+      setEmailSaved(true);
+    }
   };
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
+      {/* Ambient background */}
       <div className="pointer-events-none absolute inset-0 opacity-60">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.12),transparent_32%),radial-gradient(circle_at_80%_20%,rgba(245,158,11,0.08),transparent_18%),linear-gradient(180deg,rgba(5,10,18,0.96),rgba(2,6,12,1))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.10),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(245,158,11,0.07),transparent_18%),linear-gradient(180deg,rgba(5,10,18,0.97),rgba(2,6,12,1))]" />
         <div className="noise-mask absolute inset-0" />
       </div>
 
-      {/* Header with nav tabs */}
+      {/* ── Header ── */}
       <div className="sticky top-0 z-40 border-b border-white/8 bg-background/80 backdrop-blur-md">
         <div className="container flex items-center justify-between gap-4 py-4">
           <div className="flex items-center gap-2">
             <Brain className="h-5 w-5 text-cyan-200" />
             <h1 className="font-bold text-sm uppercase tracking-wider text-white">ThinkRN</h1>
+            <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-2 py-0.5 text-[10px] uppercase tracking-widest text-amber-200/80 hidden sm:inline">
+              On Hiatus
+            </span>
           </div>
-          <div className="flex gap-1 overflow-x-auto">
+          <nav className="flex gap-1 overflow-x-auto" aria-label="Main navigation">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               return (
                 <button
                   key={tab.key}
                   onClick={() => setActiveTab(tab.key)}
+                  aria-current={activeTab === tab.key ? "page" : undefined}
                   className={`nav-button ${activeTab === tab.key ? "border-cyan-300/50 bg-cyan-300/15" : ""}`}
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-4 w-4" aria-hidden="true" />
                   <span className="hidden sm:inline text-xs">{tab.label}</span>
                 </button>
               );
             })}
-          </div>
+          </nav>
         </div>
       </div>
 
-      {/* Main content */}
-      <div className="container relative z-10 py-8">
+      {/* ── Main ── */}
+      <main className="container relative z-10 py-10 mx-auto" style={{ maxWidth: "680px" }}>
         <AnimatePresence mode="wait">
-          {/* TERMS TAB */}
-          {activeTab === "terms" && (
-            <motion.div key="terms" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-6">
-              <div className="section-heading">
+
+          {/* ═══ HOME ═══ */}
+          {activeTab === "home" && (
+            <motion.div
+              key="home"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              className="space-y-8"
+            >
+              {/* Hero */}
+              <div className="space-y-4">
+                <div className="eyebrow flex items-center gap-2">
+                  <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
+                  Deliberate pause · April 2026
+                </div>
+                <h2 className="section-title">
+                  ThinkRN is resting.
+                  <br />
+                  <span className="text-cyan-200">Intentionally.</span>
+                </h2>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  I'm Ray — a nursing student who built this site for my cohort at MNU.
+                  It worked. We used it all semester. Now I'm stepping back to think
+                  carefully about what I'm building, why I'm building it, and what it
+                  means — for my cohort, for KC, and potentially for nursing students
+                  everywhere — before I go further.
+                </p>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  This isn't a shutdown. It's a checkpoint. My family and support system
+                  are part of this process. The site stays up so you can understand the
+                  vision — and so I have something real to come back to.
+                </p>
+              </div>
+
+              {/* Roadmap */}
+              <div className="card-shell p-6 space-y-5">
                 <div>
-                  <div className="eyebrow">Study Mode</div>
-                  <h2 className="section-title">Flashcard Terms</h2>
+                  <div className="eyebrow">Where things stand</div>
+                  <h3 className="section-title-sm mt-1">Roadmap</h3>
                 </div>
-                <select
-                  value={deck}
-                  onChange={(e) => setDeck(e.target.value)}
-                  className="rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm text-white"
-                >
-                  {deckOptions.map((d) => (
-                    <option key={d} value={d} className="bg-slate-900">
-                      {d === "all" ? "All Decks" : d}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="card-shell p-6 sm:p-8">
-                <div className="flashcard" onClick={() => setFlipped(!flipped)}>
-                  <div className="flashcard-inner" style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}>
-                    <div className="flashcard-face flashcard-front">
-                      <div>
-                        <div className="text-xs uppercase tracking-widest text-slate-400 mb-4">{currentTerm?.course}</div>
-                        <h4 className="font-bold text-2xl text-white sm:text-3xl">{currentTerm?.term}</h4>
-                      </div>
-                      <div className="text-xs text-slate-400">Click to reveal</div>
-                    </div>
-                    <div className="flashcard-face flashcard-back">
-                      <div>
-                        <div className="text-xs uppercase tracking-widest text-cyan-200 mb-4">Definition</div>
-                        <p className="text-base leading-relaxed text-white">{currentTerm?.definition}</p>
-                      </div>
-                      <div>
-                        <div className="text-xs uppercase tracking-widest text-amber-200 mb-2">Why it matters</div>
-                        <p className="text-sm leading-relaxed text-amber-100/80">{currentTerm?.why_it_matters}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 flex items-center justify-between">
-                  <div className="text-xs text-slate-400">
-                    {termIndex + 1} / {filteredTerms.length}
-                  </div>
-                  <div className="flex gap-3">
-                    <button
-                      onClick={() => setTermIndex(Math.max(0, termIndex - 1))}
-                      disabled={termIndex === 0}
-                      className="nav-button disabled:opacity-50"
-                    >
-                      <ChevronLeft className="h-4 w-4" />
-                    </button>
-                    <button
-                      onClick={() => setTermIndex(Math.min(filteredTerms.length - 1, termIndex + 1))}
-                      disabled={termIndex === filteredTerms.length - 1}
-                      className="nav-button disabled:opacity-50"
-                    >
-                      <ChevronRight className="h-4 w-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-
-          {/* PRACTICE EXAM TAB */}
-          {activeTab === "practice" && (
-            <motion.div key="practice" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-6">
-              <div className="section-heading">
-                <div>
-                  <div className="eyebrow">Assessment</div>
-                  <h2 className="section-title">Practice Exam</h2>
-                </div>
-              </div>
-
-              {!practiceFinished ? (
-                <>
-                  {showBreakReminder && (
-                    <motion.div
-                      initial={{ y: -20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      className="card-shell border-amber-400/30 bg-amber-400/10 p-4"
-                    >
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <p className="font-bold text-amber-100">Brain Break Time!</p>
-                          <p className="text-sm text-amber-100/70 mt-1">You've answered {answeredMilestone} questions. Take a moment to rest.</p>
-                        </div>
-                        <button
-                          onClick={() => setBreakDismissedAt(answeredMilestone)}
-                          className="text-amber-100 hover:text-amber-200 text-sm font-bold"
-                        >
-                          Got it
-                        </button>
-                      </div>
-                    </motion.div>
-                  )}
-
-                  <div className="card-shell p-6 sm:p-8 space-y-6">
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-slate-400">
-                        Question {questionIndex + 1} / {questions.length}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Clock3 className="h-4 w-4 text-cyan-200" />
-                        <span className="font-bold text-cyan-100">{formatTime(elapsedSeconds)}</span>
-                      </div>
-                    </div>
-
-                    <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-cyan-400 to-cyan-300 transition-all duration-300"
-                        style={{ width: progressWidth(answeredCount, questions.length) }}
-                      />
-                    </div>
-
-                    <div>
-                      <div className="text-xs uppercase tracking-widest text-slate-400 mb-3">{currentQuestion?.section}</div>
-                      <p className="text-base leading-relaxed text-white">{currentQuestion?.stem}</p>
-                    </div>
-
-                    <div className="space-y-3">
-                      {currentQuestion?.options.map((option, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => selectAnswer(idx)}
-                          disabled={answeredCurrent !== undefined}
-                          className={`answer-option ${
-                            answeredCurrent === idx
-                              ? idx === currentQuestion.answer_index
-                                ? "answer-correct"
-                                : "answer-wrong"
-                              : ""
+                <ol className="space-y-4">
+                  {roadmapItems.map((item, i) => {
+                    const Icon = item.icon;
+                    return (
+                      <li key={i} className="flex items-start gap-4">
+                        <div
+                          className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border ${
+                            item.state === "done"
+                              ? "border-emerald-400/40 bg-emerald-400/12 text-emerald-200"
+                              : item.state === "active"
+                              ? "border-amber-400/50 bg-amber-400/15 text-amber-200"
+                              : "border-white/12 bg-white/5 text-slate-600"
                           }`}
+                          aria-hidden="true"
                         >
-                          <span className="answer-badge">{String.fromCharCode(65 + idx)}</span>
-                          <span className="flex-1 text-sm">{option}</span>
-                        </button>
-                      ))}
-                    </div>
-
-                    {showRationale && answeredCurrent !== undefined && (
-                      <motion.div
-                        initial={{ y: 10, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        className="card-shell border-cyan-300/30 bg-cyan-300/10 p-4 space-y-2"
-                      >
-                        <p className="text-xs uppercase tracking-widest text-cyan-200 font-bold">Rationale</p>
-                        <p className="text-sm leading-relaxed text-cyan-100">{currentQuestion?.rationale}</p>
-                        <p className="text-xs text-cyan-100/60 mt-3">
-                          <strong>Cognitive Level:</strong> {levelLabels[currentQuestion?.cognitive_level || "recall"]}
-                        </p>
-                      </motion.div>
-                    )}
-
-                    {answeredCurrent !== undefined && (
-                      <button
-                        onClick={() => {
-                          if (questionIndex < questions.length - 1) {
-                            setQuestionIndex(questionIndex + 1);
-                            setShowRationale(false);
-                          }
-                        }}
-                        disabled={questionIndex === questions.length - 1}
-                        className="nav-button w-full justify-center disabled:opacity-50"
-                      >
-                        {questionIndex === questions.length - 1 ? "Exam Complete" : "Next Question"}
-                      </button>
-                    )}
-                  </div>
-                </>
-              ) : (
-                <div className="card-shell p-8 space-y-6">
-                  <div className="text-center">
-                    <h3 className="font-bold text-3xl text-white mb-2">Exam Complete!</h3>
-                    <p className="text-slate-400">Great work. Here's your performance breakdown.</p>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                    <div className="metric-tile">
-                      <span>Accuracy</span>
-                      <strong>{accuracyRate}%</strong>
-                    </div>
-                    <div className="metric-tile">
-                      <span>Answered</span>
-                      <strong>{answeredCount}</strong>
-                    </div>
-                    <div className="metric-tile">
-                      <span>Correct</span>
-                      <strong>{correctCount}</strong>
-                    </div>
-                    <div className="metric-tile">
-                      <span>Time</span>
-                      <strong>{formatTime(elapsedSeconds)}</strong>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3">
-                    <p className="text-xs uppercase tracking-widest text-slate-400 font-bold">By Cognitive Level</p>
-                    {Object.entries(cognitiveStats).map(([level, stats]) => (
-                      <div key={level}>
-                        <div className="flex justify-between text-sm mb-1">
-                          <span className="text-slate-300">{levelLabels[level as MetricKey]}</span>
-                          <span className="text-cyan-100 font-bold">
-                            {stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0}% ({stats.correct}/{stats.total})
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p
+                            className={`text-sm font-semibold leading-snug ${
+                              item.state === "active"
+                                ? "text-amber-100"
+                                : item.state === "done"
+                                ? "text-white"
+                                : "text-slate-500"
+                            }`}
+                          >
+                            {item.label}
+                          </p>
+                          <p className="text-xs text-slate-500 mt-0.5">{item.sub}</p>
+                        </div>
+                        {item.state === "active" && (
+                          <span className="shrink-0 self-start rounded-full border border-amber-400/30 bg-amber-400/10 px-2 py-0.5 text-[9px] uppercase tracking-widest text-amber-200/70">
+                            Now
                           </span>
-                        </div>
-                        <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-to-r from-cyan-400 to-cyan-300"
-                            style={{ width: stats.total > 0 ? `${(stats.correct / stats.total) * 100}%` : "0%" }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                        )}
+                        {item.state === "done" && (
+                          <span className="shrink-0 self-start rounded-full border border-emerald-400/25 bg-emerald-400/8 px-2 py-0.5 text-[9px] uppercase tracking-widest text-emerald-200/60">
+                            Done
+                          </span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
 
-                  <div className="space-y-3 pt-4 border-t border-white/10">
-                    <p className="text-xs uppercase tracking-widest text-slate-400 font-bold">Format Preference</p>
-                    <div className="grid grid-cols-3 gap-2">
-                      {votingOptions.map((option) => (
-                        <button
-                          key={option}
-                          onClick={() => setVote(option)}
-                          className={`rounded-lg border px-3 py-2 text-xs font-bold transition ${
-                            vote === option
-                              ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100"
-                              : "border-white/15 bg-white/8 text-slate-300 hover:border-white/30"
-                          }`}
-                        >
-                          {option}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <button onClick={resetPractice} className="nav-button w-full justify-center">
-                    <RefreshCcw className="h-4 w-4" />
-                    Start Over
-                  </button>
+              {/* Notify — browser-only, no server */}
+              <div className="card-shell p-6 space-y-4">
+                <div>
+                  <div className="eyebrow">Stay connected</div>
+                  <h3 className="section-title-sm mt-1">Get notified when ThinkRN returns</h3>
+                  <p className="text-xs text-slate-500 mt-2">
+                    Your email is saved only in your own browser. Never sent to a server. This is
+                    a local browser reminder — not a mailing list.
+                  </p>
                 </div>
-              )}
+                {!emailSaved ? (
+                  <form onSubmit={handleEmailSave} className="flex gap-2">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="you@email.com"
+                      aria-label="Email address for local notification"
+                      className="flex-1 rounded-full border border-white/15 bg-white/8 px-4 py-2.5 text-sm text-white placeholder:text-slate-600 focus:border-cyan-300/40 focus:outline-none"
+                    />
+                    <button type="submit" className="nav-button shrink-0">
+                      <Mail className="h-4 w-4" aria-hidden="true" />
+                      <span className="hidden sm:inline">Save</span>
+                    </button>
+                  </form>
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="rounded-[1.2rem] border border-emerald-400/30 bg-emerald-400/10 p-4"
+                  >
+                    <p className="text-sm text-emerald-100 font-semibold">Saved in your browser ✓</p>
+                    <p className="text-xs text-emerald-100/50 mt-1">
+                      Zero servers. Zero tracking. Completely private.
+                    </p>
+                  </motion.div>
+                )}
+              </div>
+
+              {/* Safety-gated visitor signal box */}
+              <div className="card-shell p-6 space-y-4">
+                <div>
+                  <div className="eyebrow flex items-center gap-2">
+                    <MessageSquare className="h-3.5 w-3.5" aria-hidden="true" />
+                    Visitor signal
+                  </div>
+                  <h3 className="section-title-sm mt-1">What would make ThinkRN useful for you?</h3>
+                  <p className="text-xs text-slate-500 mt-2">
+                    Stored only in your browser. Ray reads this when he returns. Not a chat — just
+                    a signal box. Clinical and academic integrity rules still apply here.
+                  </p>
+                </div>
+
+                {feedbackState === "submitted" ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="rounded-[1.2rem] border border-cyan-300/25 bg-cyan-300/8 p-4 flex items-start justify-between gap-3"
+                  >
+                    <div>
+                      <p className="text-sm text-cyan-100 font-semibold">Signal saved locally ✓</p>
+                      <p className="text-xs text-cyan-100/50 mt-1">
+                        Stored in your browser only. Ray will review when he returns.
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => setFeedbackState("idle")}
+                      className="shrink-0 text-slate-500 hover:text-slate-300 transition"
+                      aria-label="Dismiss"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </motion.div>
+                ) : feedbackState === "flagged" ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="rounded-[1.2rem] border border-amber-400/30 bg-amber-400/8 p-4 flex items-start gap-3"
+                  >
+                    <AlertTriangle className="h-5 w-5 text-amber-300 shrink-0 mt-0.5" aria-hidden="true" />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm text-amber-100 font-semibold">Can't engage with that</p>
+                      <p className="text-xs text-amber-100/60 mt-1 leading-relaxed">{safetyMsg}</p>
+                    </div>
+                    <button
+                      onClick={() => { setFeedbackState("idle"); setSafetyMsg(""); }}
+                      className="shrink-0 text-amber-400/60 hover:text-amber-300 transition"
+                      aria-label="Dismiss"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleFeedbackSubmit} className="space-y-3">
+                    <textarea
+                      ref={feedbackRef}
+                      value={feedback}
+                      onChange={(e) => handleFeedbackChange(e.target.value)}
+                      placeholder="e.g. I want full semester content for MNU · I'm a different school · I want an offline mode · I want pharmacology mnemonics…"
+                      rows={3}
+                      maxLength={280}
+                      aria-label="Visitor signal — what would make ThinkRN useful for you"
+                      className="w-full rounded-[1.2rem] border border-white/12 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:border-cyan-300/30 focus:outline-none resize-none leading-relaxed"
+                    />
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-slate-600">{feedback.length}/280</span>
+                      <button
+                        type="submit"
+                        disabled={!feedback.trim()}
+                        className="nav-button disabled:opacity-40"
+                      >
+                        Send signal
+                      </button>
+                    </div>
+                  </form>
+                )}
+              </div>
+
+              {/* Vision amber card */}
+              <div className="card-shell border-amber-400/15 bg-amber-400/5 p-6 space-y-3">
+                <div className="eyebrow text-amber-200/60">Coming next</div>
+                <h3 className="section-title-sm text-amber-100">The bigger picture</h3>
+                <p className="text-sm text-amber-100/65 leading-relaxed">
+                  ThinkRN v2 will cover a full nursing semester — all four courses, every topic area,
+                  complete flashcard decks and NCLEX-style question banks built exclusively from
+                  publicly available resources. One app. One semester. Proven at KC scale first.
+                </p>
+                <p className="text-sm text-amber-100/50 leading-relaxed">
+                  Beyond that: sliding-scale pricing, nonprofit partnerships, and a model built for
+                  access — not extraction. But only when the vision is fully understood and the
+                  roadmap is real.
+                </p>
+              </div>
             </motion.div>
           )}
 
-          {/* SCALE TAB */}
-          {activeTab === "scale" && (
-            <motion.div key="scale" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-6">
+          {/* ═══ MARKET ═══ */}
+          {activeTab === "market" && (
+            <motion.div
+              key="market"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              className="space-y-6"
+            >
               <div>
-                <div className="eyebrow">Vision</div>
-                <h2 className="section-title">How ThinkRN Scales</h2>
+                <div className="eyebrow flex items-center gap-2">
+                  <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                  Kansas City · MNU · The starting point
+                </div>
+                <h2 className="section-title mt-1">
+                  What this already proves
+                  <br />
+                  <span className="text-cyan-200">at local scale.</span>
+                </h2>
+                <p className="text-slate-300 text-sm leading-relaxed mt-4">
+                  ThinkRN wasn't built for everyone. It was built for one cohort — nursing students
+                  at MidAmerica Nazarene University in Olathe, Kansas. That constraint is the point.
+                  If it works here, it scales. Here's what the numbers look like.
+                </p>
               </div>
 
-              <div className="grid gap-6 lg:grid-cols-3">
-                {scaleCards.map((card) => {
-                  const Icon = card.icon;
+              <div className="grid gap-4 sm:grid-cols-2">
+                {marketStats.map((stat, i) => {
+                  const Icon = stat.icon;
                   return (
                     <motion.div
-                      key={card.title}
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      className="card-shell p-6 flex flex-col gap-4"
+                      key={i}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.07 }}
+                      className="card-shell p-5 space-y-3"
                     >
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <div className="eyebrow">{card.kicker}</div>
-                          <h3 className="font-bold text-lg text-white mt-2">{card.title}</h3>
+                      <div className="flex items-start gap-3">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cyan-300/20 bg-cyan-300/8 text-cyan-200">
+                          <Icon className="h-4 w-4" aria-hidden="true" />
                         </div>
-                        <Icon className="h-5 w-5 text-cyan-200 shrink-0" />
+                        <div className="min-w-0">
+                          <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500">{stat.label}</p>
+                          <p className="font-bold text-2xl text-white mt-0.5 leading-none">{stat.value}</p>
+                          <p className="text-xs text-slate-500 mt-0.5">{stat.sub}</p>
+                        </div>
                       </div>
-                      <p className="text-sm leading-relaxed text-slate-300">{card.body}</p>
-                      <div className="pt-4 border-t border-white/10">
-                        <p className="text-xs uppercase tracking-widest text-amber-200 font-bold mb-2">Proof</p>
-                        <p className="text-xs leading-relaxed text-amber-100/70">{card.proof}</p>
-                      </div>
+                      <p className="text-xs text-slate-400 leading-relaxed border-t border-white/8 pt-3">
+                        {stat.detail}
+                      </p>
                     </motion.div>
                   );
                 })}
               </div>
+
+              <div className="card-shell border-cyan-300/15 bg-cyan-300/5 p-6 space-y-3">
+                <div className="eyebrow text-cyan-200/60">The logic</div>
+                <h3 className="section-title-sm text-cyan-100">Why hyper-local first</h3>
+                <p className="text-sm text-cyan-100/65 leading-relaxed">
+                  Every nursing program in the US studies toward the same NCLEX-RN test plan.
+                  The content that works for MNU's cohort works for UMKC, works for Rockhurst,
+                  works for schools in St. Louis, Chicago, and nationwide. Starting local means
+                  the proof is real, not theoretical. It means a real cohort used it and it worked.
+                  That's the foundation everything else gets built on.
+                </p>
+                <p className="text-sm text-cyan-100/45 leading-relaxed">
+                  This tab exists so that anyone who finds this site — whether you're a student,
+                  a potential partner, or just curious — can understand the scope of what's
+                  already proven vs. what's still being planned.
+                </p>
+              </div>
             </motion.div>
           )}
 
-          {/* ABOUT TAB */}
+          {/* ═══ INTEGRITY ═══ */}
+          {activeTab === "integrity" && (
+            <motion.div
+              key="integrity"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              className="space-y-6"
+            >
+              <div>
+                <div className="eyebrow flex items-center gap-2">
+                  <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
+                  Non-negotiable
+                </div>
+                <h2 className="section-title mt-1">Academic Integrity</h2>
+              </div>
+
+              <div className="card-shell p-6 sm:p-8 space-y-6">
+                <div className="rounded-[1.2rem] border border-cyan-300/25 bg-cyan-300/8 p-4">
+                  <p className="text-sm leading-relaxed text-cyan-100">
+                    ThinkRN is an organization and study tool. All content is generated from
+                    publicly available nursing education resources — ATI topic areas, the NCLEX-RN
+                    test plan published by NCSBN, and standard nursing textbook concepts.
+                    No school-specific intellectual property is used.
+                  </p>
+                </div>
+
+                <div className="space-y-5">
+                  <div>
+                    <h3 className="font-bold text-white text-base mb-3">What this is ✓</h3>
+                    <ul className="space-y-2.5">
+                      {[
+                        "A personal study aid built on publicly available nursing education standards",
+                        "Flashcards and NCLEX-style questions aligned to ATI topic areas and the NCSBN test plan",
+                        "A tool to reinforce and organize learning — not replace it",
+                        "A project built by one student for his cohort, with zero institutional affiliation",
+                        "Zero data collection — no tracking, no cookies, no server",
+                      ].map((item, i) => (
+                        <li key={i} className="flex gap-3 text-sm text-slate-300">
+                          <span className="text-emerald-400 mt-0.5 shrink-0" aria-hidden="true">✓</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-4 border-t border-white/8">
+                    <h3 className="font-bold text-white text-base mb-3">What this is not —</h3>
+                    <ul className="space-y-2.5">
+                      {[
+                        "Not a cheating tool — answers are for studying, not copying",
+                        "Not a substitute for clinical education, instructors, or hands-on practice",
+                        "Not affiliated with any school, institution, or testing body",
+                        "Not a source of proprietary exam questions from any program",
+                        "Not a medical advice tool — never use this for real patient care decisions",
+                      ].map((item, i) => (
+                        <li key={i} className="flex gap-3 text-sm text-slate-400">
+                          <span className="text-amber-400/70 mt-0.5 shrink-0" aria-hidden="true">—</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-4 border-t border-white/8">
+                    <h3 className="font-bold text-white text-base mb-2">Built-in safety</h3>
+                    <p className="text-sm text-slate-300 leading-relaxed">
+                      The feedback box on the Home tab uses automatic client-side pattern detection.
+                      Messages that match dangerous prompt patterns — prompt injection attempts,
+                      requests for real exam answers, clinical harm queries, or personal data
+                      extraction — are blocked locally before they're stored. Nothing is transmitted
+                      to a server. This is a transparency layer, not a punishment system.
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-white/8">
+                    <h3 className="font-bold text-white text-base mb-2">Why I built this</h3>
+                    <p className="text-sm text-slate-400 leading-relaxed">
+                      I'm a nursing student. I saw how hard my cohort was working and built something
+                      to make it more organized. The process of building it affected me in ways I'm
+                      still working through. This pause is part of that — taking real time to
+                      understand the impact before scaling anything further.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* ═══ ABOUT ═══ */}
           {activeTab === "about" && (
-            <motion.div key="about" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-6 max-w-2xl">
+            <motion.div
+              key="about"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              className="space-y-6"
+            >
               <div>
                 <div className="eyebrow">Transparency</div>
-                <h2 className="section-title">About This Site</h2>
+                <h2 className="section-title mt-1">About This Site</h2>
               </div>
 
               <div className="card-shell p-6 sm:p-8 space-y-6">
                 <div>
-                  <h3 className="font-bold text-lg text-white mb-3">Data & Privacy</h3>
-                  <p className="text-sm leading-relaxed text-slate-300 mb-4">
-                    <strong>ThinkRN does not collect any data on this site.</strong> This is a free study tool for our cohort. No tracking, no cookies, no analytics.
-                  </p>
-                  <p className="text-sm leading-relaxed text-slate-300">
-                    For next year's cohort, we're exploring an opt-in/opt-out model. The question we're asking: "If this was free for you, would you let us track basic study metrics to make it better?" All future cohorts will have a sliding scale pricing model.
+                  <h3 className="font-bold text-lg text-white mb-2">Who built this</h3>
+                  <p className="text-sm text-slate-300 leading-relaxed">
+                    Ray Kosgei. Nursing student. Class rep. MNU, Olathe KS → Kansas City.
+                    Built ThinkRN during Semester 2 as a study and organization tool for his cohort.
+                    Stack: React · Vite · TypeScript · Tailwind CSS · GitHub Pages.
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-white/10">
-                  <h3 className="font-bold text-lg text-white mb-3">How It Works</h3>
-                  <ul className="space-y-3 text-sm text-slate-300">
-                    <li className="flex gap-3">
-                      <span className="text-cyan-200 font-bold">•</span>
-                      <span><strong>Terms Deck:</strong> Flip through flashcards organized by exam topic.</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-cyan-200 font-bold">•</span>
-                      <span><strong>Practice Exam:</strong> NCLEX-style questions with rationales and cognitive level breakdown.</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-cyan-200 font-bold">•</span>
-                      <span><strong>Investor Scale:</strong> How ThinkRN grows with funding.</span>
-                    </li>
-                  </ul>
+                <div className="pt-5 border-t border-white/8">
+                  <h3 className="font-bold text-lg text-white mb-2">Data & privacy</h3>
+                  <p className="text-sm text-slate-300 leading-relaxed">
+                    <strong>Zero data collection.</strong> No tracking, no analytics, no cookies,
+                    no server calls. Your session — including any feedback or email you saved —
+                    lives only in your own browser's localStorage. Nothing was ever sent anywhere.
+                  </p>
                 </div>
 
-                <div className="pt-6 border-t border-white/10">
-                  <h3 className="font-bold text-lg text-white mb-3">Your Session</h3>
-                  <p className="text-sm leading-relaxed text-slate-300">
-                    Your progress is saved locally in your browser. Close and reopen anytime—your answers, time, and preferences are preserved. No server, no tracking, completely private.
+                <div className="pt-5 border-t border-white/8">
+                  <h3 className="font-bold text-lg text-white mb-2">The vision — openly</h3>
+                  <p className="text-sm text-slate-300 leading-relaxed mb-3">
+                    Privately funded by Ray right now. Long-term: open to public funding and
+                    nonprofit partnerships — specifically because access to good study tools is
+                    unevenly distributed and he has seen it firsthand.
+                  </p>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    Not building that yet. Needs to think it through. When he comes back,
+                    the plan is a real long-term roadmap, full content bank, and a clear framework
+                    for how nonprofit collaboration would work without compromising integrity.
+                  </p>
+                </div>
+
+                <div className="pt-5 border-t border-white/8">
+                  <h3 className="font-bold text-lg text-white mb-2">Source code</h3>
+                  <p className="text-sm text-slate-300">
+                    Open source.{" "}
+                    <a
+                      href="https://github.com/uyhlop/thinkrn-exams"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200 transition"
+                    >
+                      github.com/uyhlop/thinkrn-exams
+                    </a>
                   </p>
                 </div>
               </div>
             </motion.div>
           )}
+
         </AnimatePresence>
-      </div>
+      </main>
     </div>
   );
 }
